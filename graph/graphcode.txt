@@ -1,0 +1,52 @@
+digraph G
+{
+    graph [dpi = 1000];
+    bgcolor = "#9F8C76"
+
+    node[shape = "box", style = "rounded, filled",
+    height = 1, width = 2,
+    fillcolor = "#F5F5DC",
+    fontsize = 17,
+    fontname = "Courier New",
+    fontcolor = "#1a1718",
+    penwidth = 2, color = "#1a1718"
+    ]
+
+	81507712 [shape = "record", color="#632b2b", label = "{0x01 | {OP | 0x4dbb580} | {0x4dbb5e0 | 0x4dbbac0}}"];
+	81507712 -> 81507808;
+	81507808 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbb5e0} | {0x4dbb640 | 0x4dbba60}}"];
+	81507808 -> 81507904;
+	81507904 [shape = "record", color="#632b2b", label = "{0x01 | {OP | 0x4dbb640} | {0x4dbb6a0 | 0x4dbb940}}"];
+	81507904 -> 81508000;
+	81508000 [shape = "record", color="#632b2b", label = "{0x03 | {OP | 0x4dbb6a0} | {0x4dbb700 | 0x4dbb8e0}}"];
+	81508000 -> 81508096;
+	81508096 [shape = "record", color="#632b2b", label = "{0x04 | {OP | 0x4dbb700} | {0x4dbb760 | 0x4dbb880}}"];
+	81508096 -> 81508192;
+	81508192 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbb760} | {0x4dbb7c0 | 0x4dbb820}}"];
+	81508192 -> 81508288;
+	81508288 [shape = "record", color="#478056", label = "{82.000000 | {NUM | 0x4dbb7c0} | {(nil) | (nil)}}"];
+	81508192 -> 81508384;
+	81508384 [shape = "record", color="#478056", label = "{74.000000 | {NUM | 0x4dbb820} | {(nil) | (nil)}}"];
+	81508096 -> 81508480;
+	81508480 [shape = "record", color="#478056", label = "{2.000000 | {NUM | 0x4dbb880} | {(nil) | (nil)}}"];
+	81508000 -> 81508576;
+	81508576 [shape = "record", color="#478056", label = "{8.000000 | {NUM | 0x4dbb8e0} | {(nil) | (nil)}}"];
+	81507904 -> 81508672;
+	81508672 [shape = "record", color="#632b2b", label = "{0x03 | {OP | 0x4dbb940} | {0x4dbb9a0 | 0x4dbba00}}"];
+	81508672 -> 81508768;
+	81508768 [shape = "record", color="#478056", label = "{5.000000 | {NUM | 0x4dbb9a0} | {(nil) | (nil)}}"];
+	81508672 -> 81508864;
+	81508864 [shape = "record", color="#478056", label = "{6.000000 | {NUM | 0x4dbba00} | {(nil) | (nil)}}"];
+	81507808 -> 81508960;
+	81508960 [shape = "record", color="#478056", label = "{19.000000 | {NUM | 0x4dbba60} | {(nil) | (nil)}}"];
+	81507712 -> 81509056;
+	81509056 [shape = "record", color="#632b2b", label = "{0x04 | {OP | 0x4dbbac0} | {0x4dbbb20 | 0x4dbbc40}}"];
+	81509056 -> 81509152;
+	81509152 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbbb20} | {0x4dbbb80 | 0x4dbbbe0}}"];
+	81509152 -> 81509248;
+	81509248 [shape = "record", color="#478056", label = "{93.000000 | {NUM | 0x4dbbb80} | {(nil) | (nil)}}"];
+	81509152 -> 81509344;
+	81509344 [shape = "record", color="#478056", label = "{57.000000 | {NUM | 0x4dbbbe0} | {(nil) | (nil)}}"];
+	81509056 -> 81509440;
+	81509440 [shape = "record", color="#478056", label = "{4.000000 | {NUM | 0x4dbbc40} | {(nil) | (nil)}}"];
+}

@@ -1,0 +1,109 @@
+> size of file is: 62
+>> file was read
+> current pos: <1>, the rest of the expression: <<((((((82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <2>, the rest of the expression: <<(((((82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <3>, the rest of the expression: <<((((82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <4>, the rest of the expression: <<(((82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <5>, the rest of the expression: <<((82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <6>, the rest of the expression: <<(82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <7>, the rest of the expression: <<82)-(74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 82.000000, on pos: '7'
+> found closing bracket
+>> node was created with the pointer: 0x4dbb7c0
+> scanned character is: '-', on pos : '10'
+> operation was founded, it's code is '2'> current pos: <12>, the rest of the expression: <<74))/(2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 74.000000, on pos: '12'
+> found closing bracket
+>> node was created with the pointer: 0x4dbb820
+> found closing bracket
+>> node was created with the pointer: 0x4dbb760
+> scanned character is: '/', on pos : '16'
+> operation was founded, it's code is '4'> current pos: <18>, the rest of the expression: <<2))*(8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 2.000000, on pos: '18'
+> found closing bracket
+>> node was created with the pointer: 0x4dbb880
+> found closing bracket
+>> node was created with the pointer: 0x4dbb700
+> scanned character is: '*', on pos : '21'
+> operation was founded, it's code is '3'> current pos: <23>, the rest of the expression: <<8))+((5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 8.000000, on pos: '23'
+> found closing bracket
+>> node was created with the pointer: 0x4dbb8e0
+> found closing bracket
+>> node was created with the pointer: 0x4dbb6a0
+> scanned character is: '+', on pos : '26'
+> operation was founded, it's code is '1'> current pos: <28>, the rest of the expression: <<(5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> current pos: <29>, the rest of the expression: <<5)*(6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 5.000000, on pos: '29'
+> found closing bracket
+>> node was created with the pointer: 0x4dbb9a0
+> scanned character is: '*', on pos : '31'
+> operation was founded, it's code is '3'> current pos: <33>, the rest of the expression: <<6)))-(19))+(((93)-(57))/(4)))>>
+> number founded: 6.000000, on pos: '33'
+> found closing bracket
+>> node was created with the pointer: 0x4dbba00
+> found closing bracket
+>> node was created with the pointer: 0x4dbb940
+> found closing bracket
+>> node was created with the pointer: 0x4dbb640
+> scanned character is: '-', on pos : '37'
+> operation was founded, it's code is '2'> current pos: <39>, the rest of the expression: <<19))+(((93)-(57))/(4)))>>
+> number founded: 19.000000, on pos: '39'
+> found closing bracket
+>> node was created with the pointer: 0x4dbba60
+> found closing bracket
+>> node was created with the pointer: 0x4dbb5e0
+> scanned character is: '+', on pos : '43'
+> operation was founded, it's code is '1'> current pos: <45>, the rest of the expression: <<((93)-(57))/(4)))>>
+> current pos: <46>, the rest of the expression: <<(93)-(57))/(4)))>>
+> current pos: <47>, the rest of the expression: <<93)-(57))/(4)))>>
+> number founded: 93.000000, on pos: '47'
+> found closing bracket
+>> node was created with the pointer: 0x4dbbb80
+> scanned character is: '-', on pos : '50'
+> operation was founded, it's code is '2'> current pos: <52>, the rest of the expression: <<57))/(4)))>>
+> number founded: 57.000000, on pos: '52'
+> found closing bracket
+>> node was created with the pointer: 0x4dbbbe0
+> found closing bracket
+>> node was created with the pointer: 0x4dbbb20
+> scanned character is: '/', on pos : '56'
+> operation was founded, it's code is '4'> current pos: <58>, the rest of the expression: <<4)))>>
+> number founded: 4.000000, on pos: '58'
+> found closing bracket
+>> node was created with the pointer: 0x4dbbc40
+> found closing bracket
+>> node was created with the pointer: 0x4dbbac0
+> found closing bracket
+>> node was created with the pointer: 0x4dbb580
+>> tree was created with the root: 0x4dbb580> the end of the tree found, the object is: 82.000000
+> left tree found with the pointer: 0x4dbb7c0
+> the end of the tree found, the object is: 74.000000
+> right tree found with the pointer: 0x4dbb820
+> left tree found with the pointer: 0x4dbb760
+> the end of the tree found, the object is: 2.000000
+> right tree found with the pointer: 0x4dbb880
+> left tree found with the pointer: 0x4dbb700
+> the end of the tree found, the object is: 8.000000
+> right tree found with the pointer: 0x4dbb8e0
+> left tree found with the pointer: 0x4dbb6a0
+> the end of the tree found, the object is: 5.000000
+> left tree found with the pointer: 0x4dbb9a0
+> the end of the tree found, the object is: 6.000000
+> right tree found with the pointer: 0x4dbba00
+> right tree found with the pointer: 0x4dbb940
+> left tree found with the pointer: 0x4dbb640
+> the end of the tree found, the object is: 19.000000
+> right tree found with the pointer: 0x4dbba60
+> left tree found with the pointer: 0x4dbb5e0
+> the end of the tree found, the object is: 93.000000
+> left tree found with the pointer: 0x4dbbb80
+> the end of the tree found, the object is: 57.000000
+> right tree found with the pointer: 0x4dbbbe0
+> left tree found with the pointer: 0x4dbbb20
+> the end of the tree found, the object is: 4.000000
+> right tree found with the pointer: 0x4dbbc40
+> right tree found with the pointer: 0x4dbbac0
+>> tree was read succesfully
+> graphcode created successfully
+>>> graph was created, eop[success]
