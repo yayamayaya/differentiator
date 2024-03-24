@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../../common/log.h"
+#include "../../ilab/common/log.h"
 #include "operations.h"
 
 
