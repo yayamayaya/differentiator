@@ -49,14 +49,11 @@ node_t *create_tree(char **tokens)
         node->data.operation = character;
         node->data_type = OPERATION;
         treeStack.stackPop(&node->l);
-        node->r
-    }
+}
     
     
     
 }
-
-int
 
 
 int calloc_for_node(node_t **node)
