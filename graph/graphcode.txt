@@ -12,41 +12,5 @@ digraph G
     penwidth = 2, color = "#1a1718"
     ]
 
-	81507760 [shape = "record", color="#632b2b", label = "{0x01 | {OP | 0x4dbb5b0} | {0x4dbb610 | 0x4dbbaf0}}"];
-	81507760 -> 81507856;
-	81507856 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbb610} | {0x4dbb670 | 0x4dbba90}}"];
-	81507856 -> 81507952;
-	81507952 [shape = "record", color="#632b2b", label = "{0x01 | {OP | 0x4dbb670} | {0x4dbb6d0 | 0x4dbb970}}"];
-	81507952 -> 81508048;
-	81508048 [shape = "record", color="#632b2b", label = "{0x03 | {OP | 0x4dbb6d0} | {0x4dbb730 | 0x4dbb910}}"];
-	81508048 -> 81508144;
-	81508144 [shape = "record", color="#632b2b", label = "{0x04 | {OP | 0x4dbb730} | {0x4dbb790 | 0x4dbb8b0}}"];
-	81508144 -> 81508240;
-	81508240 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbb790} | {0x4dbb7f0 | 0x4dbb850}}"];
-	81508240 -> 81508336;
-	81508336 [shape = "record", color="#478056", label = "{82.000000 | {NUM | 0x4dbb7f0} | {(nil) | (nil)}}"];
-	81508240 -> 81508432;
-	81508432 [shape = "record", color="#478056", label = "{74.000000 | {NUM | 0x4dbb850} | {(nil) | (nil)}}"];
-	81508144 -> 81508528;
-	81508528 [shape = "record", color="#478056", label = "{2.000000 | {NUM | 0x4dbb8b0} | {(nil) | (nil)}}"];
-	81508048 -> 81508624;
-	81508624 [shape = "record", color="#478056", label = "{8.000000 | {NUM | 0x4dbb910} | {(nil) | (nil)}}"];
-	81507952 -> 81508720;
-	81508720 [shape = "record", color="#632b2b", label = "{0x03 | {OP | 0x4dbb970} | {0x4dbb9d0 | 0x4dbba30}}"];
-	81508720 -> 81508816;
-	81508816 [shape = "record", color="#478056", label = "{5.000000 | {NUM | 0x4dbb9d0} | {(nil) | (nil)}}"];
-	81508720 -> 81508912;
-	81508912 [shape = "record", color="#478056", label = "{6.000000 | {NUM | 0x4dbba30} | {(nil) | (nil)}}"];
-	81507856 -> 81509008;
-	81509008 [shape = "record", color="#478056", label = "{19.000000 | {NUM | 0x4dbba90} | {(nil) | (nil)}}"];
-	81507760 -> 81509104;
-	81509104 [shape = "record", color="#632b2b", label = "{0x04 | {OP | 0x4dbbaf0} | {0x4dbbb50 | 0x4dbbc70}}"];
-	81509104 -> 81509200;
-	81509200 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbbb50} | {0x4dbbbb0 | 0x4dbbc10}}"];
-	81509200 -> 81509296;
-	81509296 [shape = "record", color="#478056", label = "{93.000000 | {NUM | 0x4dbbbb0} | {(nil) | (nil)}}"];
-	81509200 -> 81509392;
-	81509392 [shape = "record", color="#478056", label = "{57.000000 | {NUM | 0x4dbbc10} | {(nil) | (nil)}}"];
-	81509104 -> 81509488;
-	81509488 [shape = "record", color="#478056", label = "{4.000000 | {NUM | 0x4dbbc70} | {(nil) | (nil)}}"];
+	81507760 [shape = "record", color="#478056", label = "{52.00 | {NUM | 0x4dbb5b0} | {(nil) | (nil)}}"];
 }
