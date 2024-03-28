@@ -1,24 +1,9 @@
 #include "create_graph.h"
 
-int create_gparh_code();
-int go_through_tree(FILE *gcode, node_t *node);
-
-int main()
+/*int main()
 {
     OPEN_LOG_FILE();
-    if (create_gparh_code())
-        return ERR;
-    LOG("> graphcode created successfully\n");
 
-    system(PNG_LOC);
-    LOG(">>> graph was created, eop%s", "[success]");
-    CLOSE_LOG_FILE();
-
-    return NO_ERR;
-}
-
-int create_gparh_code()
-{
     node_t *root = create_expr_tree(EXPR_LOC);
     if (!root)
     {
@@ -26,6 +11,22 @@ int create_gparh_code()
         return ERR;
     }
 
+    if (create_gparh_code())
+        return ERR;
+    LOG("> graphcode created successfully\n");
+
+    system(PNG_LOC);
+    LOG(">>> graph was created, eop%s", "[success]");
+
+    tree_kill(root);
+
+    CLOSE_LOG_FILE();
+
+    return NO_ERR;
+}*/
+
+int create_gparh_code(node_t *node)
+{
     FILE *gcode = fopen("graph/graphcode.txt", "wb");
     if (!gcode)
     {
@@ -35,12 +36,11 @@ int create_gparh_code()
     setbuf(gcode, NULL);
 
     fprintf(gcode, GPRAPH_CODE_START);
-    go_through_tree(gcode, root);
+    go_through_tree(gcode, node);
     fprintf(gcode, "}\n");
     LOG(">> tree was read succesfully\n");
 
     fclose(gcode);
-    tree_kill(root);
 
     return NO_ERR;
 }

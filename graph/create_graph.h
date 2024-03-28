@@ -40,7 +40,7 @@
     penwidth = 2, color = \"#1a1718\"\n\
     ]\n\n\
 "
-#define GRAPH_NUMBER_NODE   "\t%d [shape = \"record\", color=\"#478056\", label = \"{%lf | {NUM | %p} | {%p | %p}}\"];\n", \
+#define GRAPH_NUMBER_NODE   "\t%d [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.number, node, node->l, node->r
 #define GRAPH_OP_NODE       "\t%d [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.operation, node, node->l, node->r
