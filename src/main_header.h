@@ -6,6 +6,8 @@
 #include <assert.h>
 #include "../../ilab/common/log.h"
 #include "operations.h"
+#include "../graph/create_graph.h"
+//#include "expr_calc.h"
 
 
 #define DEBUG
@@ -53,6 +55,16 @@ node_t *create_tree(char *buffer);
 int calloc_for_node(node_t **node);
 int detect_operation(const char character);
 int tree_kill(node_t *node);
+
+//From expression calculator
+int calculate(node_t *root);
+node_t *calculate_tree(node_t *node);
+double make_operation(double first_arg, double second_arg, char operation_number);
+void op_to_num_node(node_t *node);
+
+//From graph code creator
+int create_gparh_code(node_t *node);
+int go_through_tree(FILE *gcode, node_t *node);
 
 
 
