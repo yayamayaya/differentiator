@@ -9,6 +9,7 @@ node_t *create_expr_tree(const char* expression_file_location)
 
     if (!read_file(&buffer, expression_file_location))
     {
+        
         tree_root = create_tree(buffer);
 
         free(buffer);
@@ -96,8 +97,7 @@ node_t *create_tree(char *buffer)
         return NULL;
     }
 
-
-
+    return NULL;
 }
 
 int calloc_for_node(node_t **node)
