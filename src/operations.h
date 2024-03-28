@@ -17,6 +17,11 @@ enum OPERATIONS
     DIV         = 0x04,
 };
 
+/*#define SUM +
+#define SUB -
+#define MUL *
+#define DIVISION */
+
 extern operation_t operations[OPERATIONS_NUMBER];
 
 #endif

@@ -13,8 +13,8 @@ int read_file(char **buffer_ptr, const char *expression_file_loc)
     }
 
     int file_size = get_file_size(expression_file);
-
     LOG("> size of file is: %d\n", file_size);
+    
     char *buffer = (char *)calloc(file_size + 1, sizeof(char));
     if (!buffer)
     {
