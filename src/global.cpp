@@ -1,4 +1,4 @@
-#include "main_header.h"
+#include "headers/main_header.h"
 
 FILE *diff_log = NULL;
 
@@ -7,5 +7,6 @@ operation_t operations[OPERATIONS_NUMBER] =
     {"+", PLUS},
     {"-", MINUS},
     {"*", MULT},
-    {"/", DIV}
+    {"/", DIV},
+    {"^", POW},
 };
