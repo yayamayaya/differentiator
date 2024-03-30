@@ -1,4 +1,4 @@
-#include "expr_calc.h"
+#include "../headers/expr_calc.h"
 
 int calculate(node_t *root)
 {
@@ -17,7 +17,9 @@ int calculate(node_t *root)
 
 node_t *calculate_tree(node_t *node)
 {
-    //assert(node);
+    static node_t *root = node;
+    assert(root);
+
     if (!node)
     {
         LOG("> Node has not been operated on, returning NULL\n");
@@ -29,14 +31,13 @@ node_t *calculate_tree(node_t *node)
         LOG("> Number %lf founded\n", node->data.number);
         return node;        
     }
-
-
-    /*
-    if(node->data_type == VARIABLE)
-
-    */  
-   else if (node->data_type == OPERATION)
-   {
+    else if (node->data_type == VARIABLE)  
+    {
+        LOG("> Variable found: %c\n", node->data.variable);
+        return NULL;
+    }
+    else if (node->data_type == OPERATION)
+    {
         node_t *leftNode = calculate_tree(node->l);
         node_t *rightNode = calculate_tree(node->r);
 
@@ -47,12 +48,6 @@ node_t *calculate_tree(node_t *node)
             LOG("> One of the child nodes returned NULL, operation will not be executed\n");
             return NULL;
         }
-        
-        //double number_one = 0;
-        //double number_two = 0;
-
-        //number_one = calculate_tree(node->l);
-        //number_two = calculate_tree(node->r);
 
         double result = make_operation(leftNode->data.number, rightNode->data.number, node->data.operation);
         LOG("> result of calc is: %lf\n", result);
@@ -60,8 +55,11 @@ node_t *calculate_tree(node_t *node)
         op_to_num_node(node);
         LOG("> node was translated to number\n");
         node->data.number = result;
+
+        create_gparh_code(root, OP);
+
         return node;
-   }
+    }
 
    return NULL;
 }
@@ -79,7 +77,7 @@ double make_operation(double first_arg, double second_arg, char operation_number
     case DIV:
         return first_arg / second_arg;
     default:
-        LOG(">>> fatal error in making an operation\n");
+        LOG(">>> fatal error in making an operation%40s\n", "[error]");
         return 0;
     }
 }
