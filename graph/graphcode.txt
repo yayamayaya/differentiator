@@ -12,5 +12,17 @@ digraph G
     penwidth = 2, color = "#1a1718"
     ]
 
-	81507760 [shape = "record", color="#478056", label = "{52.00 | {NUM | 0x4dbb5b0} | {(nil) | (nil)}}"];
+	node_num0x4dbba40 [shape = "record", color="#632b2b", label = "{0x04 | {OP | 0x4dbba40} | {0x4dbb9e0 | 0x4dbb740}}"];
+	node_num0x4dbba40 -> node_num0x4dbb9e0;
+	node_num0x4dbb9e0 [shape = "record", color="#632b2b", label = "{0x02 | {OP | 0x4dbb9e0} | {0x4dbb980 | 0x4dbb860}}"];
+	node_num0x4dbb9e0 -> node_num0x4dbb980;
+	node_num0x4dbb980 [shape = "record", color="#478056", label = "{2.00 | {NUM | 0x4dbb980} | {(nil) | (nil)}}"];
+	node_num0x4dbb9e0 -> node_num0x4dbb860;
+	node_num0x4dbb860 [shape = "record", color="#632b2b", label = "{0x03 | {OP | 0x4dbb860} | {0x4dbb800 | 0x4dbb7a0}}"];
+	node_num0x4dbb860 -> node_num0x4dbb800;
+	node_num0x4dbb800 [shape = "record", color="#70578a", label = "{x | {VAR | 0x4dbb800} | {(nil) | (nil)}}"];
+	node_num0x4dbb860 -> node_num0x4dbb7a0;
+	node_num0x4dbb7a0 [shape = "record", color="#478056", label = "{0.00 | {NUM | 0x4dbb7a0} | {(nil) | (nil)}}"];
+	node_num0x4dbba40 -> node_num0x4dbb740;
+	node_num0x4dbb740 [shape = "record", color="#478056", label = "{0.00 | {NUM | 0x4dbb740} | {(nil) | (nil)}}"];
 }
