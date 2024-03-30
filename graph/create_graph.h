@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../src/main_header.h"
+#include "../src/headers/main_header.h"
 
 #define EXPR_LOC "data/expression_to_diff.txt"
 #define PNG_LOC "dot graph/graphcode.txt -Tpng -otree.png"
@@ -40,13 +40,23 @@
     penwidth = 2, color = \"#1a1718\"\n\
     ]\n\n\
 "
-#define GRAPH_NUMBER_NODE   "\t%d [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
+#define GRAPH_NUMBER_NODE   "\tnode_num%p [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.number, node, node->l, node->r
-#define GRAPH_OP_NODE       "\t%d [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
+#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.operation, node, node->l, node->r
+#define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%c | {VAR | %p} | {%p | %p}}\"];\n", \
+                                                                                node, node->data.variable, node, node->l, node->r
 
 
+#define DOT_CALL    "dot graph/graphcode.txt -Tpng -o"
 
+enum PNG_NAMES
+{
+    EXPR = 0,
+    DIFF_EXPR,
+    OP,
+    DIFF_OP,
+};
 
 enum GRAPH_ERRORS
 {
