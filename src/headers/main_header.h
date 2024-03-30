@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../../ilab/common/log.h"
+#include "../../../ilab/common/log.h"
 #include "operations.h"
-#include "../graph/create_graph.h"
+#include "../../graph/create_graph.h"
 //#include "expr_calc.h"
 
 
@@ -63,10 +63,18 @@ double make_operation(double first_arg, double second_arg, char operation_number
 void op_to_num_node(node_t *node);
 
 //From graph code creator
-int create_gparh_code(node_t *node);
+int create_gparh_code(node_t *node, const int PNG_TYPE);
+void print_png(const int PNG_TYPE);
+void clear_all_png();
 int go_through_tree(FILE *gcode, node_t *node);
 
+//From create_node
+node_t *create_node(double data, int data_type, node_t *left_node, node_t *right_node);
+node_t *create_node(enum OPERATIONS data, int data_type, node_t *left_node, node_t *right_node);
+node_t *create_node(const char data, int data_type, node_t *left_node, node_t *right_node);
 
-
+//From differentiate
+node_t *differen(node_t *node);
+node_t *copy_node(node_t *node);
 
 #endif
