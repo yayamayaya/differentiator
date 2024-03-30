@@ -1,7 +1,7 @@
 #ifndef OPERATIONS_H
 #define OPERATIONS_H
 
-#define OPERATIONS_NUMBER 4
+#define OPERATIONS_NUMBER 5
 
 typedef struct
 {
@@ -15,6 +15,7 @@ enum OPERATIONS
     MINUS       = 0x02,
     MULT        = 0x03,
     DIV         = 0x04,
+    POW         = 0x05,
 };
 
 /*#define SUM +

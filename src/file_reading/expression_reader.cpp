@@ -1,4 +1,4 @@
-#include "main_header.h"
+#include "../headers/main_header.h"
 
 node_t *create_expr_tree(const char* expression_file_location)
 {
@@ -55,7 +55,7 @@ node_t *create_tree(char *buffer)
             LOG("> number founded: %lf, on pos: '%d'\n", number, pos);
             pos += scanned;
             node->data.number = number;
-            node->data_type = 1;
+            node->data_type = NUMBER;
         }
         else
         {
@@ -64,15 +64,23 @@ node_t *create_tree(char *buffer)
             int operation = detect_operation(character);
             if (operation)
             {
-                LOG("> operation was founded, it's code is '%x'", operation);
+                LOG("> operation was found, it's code is '%x'", operation);
                 pos++;
                 node->data.operation = operation;
-                node->data_type = 2;
+                node->data_type = OPERATION;
             }
-            /*if (detect_variable(character))
+            else if (buffer[pos] == 'x')
             {
-                code 
-            }*/
+                LOG("> variable was found: %c\n", character);
+                pos++;
+                node->data.variable = character;
+                node->data_type = VARIABLE;
+            }
+            else
+            {
+                LOG(">>> Data not defined%40s\n", "[error]");
+                pos++;
+            }
         }
         if (buffer[pos] == '(')
             node->r = create_tree(buffer);        

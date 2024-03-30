@@ -1,4 +1,4 @@
-#include "main_header.h"
+#include "../headers/main_header.h"
 
 int read_file(char **buffer_ptr, const char *expression_file_loc)
 {
