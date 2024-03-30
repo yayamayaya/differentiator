@@ -2,3 +2,5 @@ graph/graphcode.txt
 tree.png
 tests
 tests/test_union.cpp
+graph/operations
+graph/diff_operations
