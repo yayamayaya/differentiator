@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../src/headers/main_header.h"
+#include "../src/headers/types.h"
+#include "../src/headers/log.h"
 
 #define EXPR_LOC "data/expression_to_diff.txt"
 #define PNG_LOC "dot graph/graphcode.txt -Tpng -otree.png"
@@ -63,5 +64,10 @@ enum GRAPH_ERRORS
     ERR = 1,
     NO_ERR = 0,
 };
+
+int create_gparh_code(node_t *node, const int PNG_TYPE);
+void print_png(const int PNG_TYPE);
+void clear_all_png();
+int go_through_tree(FILE *gcode, node_t *node);
 
 #endif
