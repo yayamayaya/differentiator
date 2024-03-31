@@ -1,4 +1,5 @@
-#include "headers/main_header.h"
+//#include "headers/main.h"
+#include "headers/create_node.h"
 
 node_t *create_node(double data, int data_type, node_t *left_node, node_t *right_node)
 {

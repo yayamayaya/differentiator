@@ -1,4 +1,4 @@
-#include "../headers/main_header.h"
+#include "../headers/main.h"
 
 node_t *create_expr_tree(const char* expression_file_location)
 {

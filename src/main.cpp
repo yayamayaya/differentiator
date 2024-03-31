@@ -1,4 +1,4 @@
-#include "headers/main_header.h"
+#include "headers/main.h"
 
 int main(int argc, char const *argv[])
 {

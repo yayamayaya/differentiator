@@ -57,8 +57,8 @@ void clear_all_png()
     //system("cd graph/operations \nrm *");
     //system("cd graph/diff_operations \nrm *");
     //system("cd ../..");
-    system("rm graph/operations/*");
-    system("rm graph/diff_operations/*");
+    system("rm graph/operations");
+    system("rm graph/diff_operations");
     system("rm differentiated_expression.png");
     system("rm expression.png");
 }

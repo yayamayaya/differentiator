@@ -19,8 +19,8 @@ node_t *differen(node_t *node)
         LOG("> OPERATION was found for diffing\n");
         switch (node->data.operation)
         {
-        case PLUS:
-        case MINUS:
+        case ADD:
+        case SUB:
             return create_node(node->data.operation, OPERATION, differen(node->l), differen(node->r));
 
         case MULT: return _MULT_OP();
