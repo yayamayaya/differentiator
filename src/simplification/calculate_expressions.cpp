@@ -68,9 +68,9 @@ double make_operation(double first_arg, double second_arg, char operation_number
 {
     switch (operation_number)
     {
-    case PLUS:
+    case ADD:
         return first_arg + second_arg;
-    case MINUS:
+    case SUB:
         return first_arg - second_arg;
     case MULT:
         return first_arg * second_arg;
