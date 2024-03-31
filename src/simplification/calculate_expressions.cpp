@@ -76,6 +76,8 @@ double make_operation(double first_arg, double second_arg, char operation_number
         return first_arg * second_arg;
     case DIV:
         return first_arg / second_arg;
+    case POW:
+        return pow(first_arg, second_arg);
     default:
         LOG(">>> fatal error in making an operation%40s\n", "[error]");
         return 0;

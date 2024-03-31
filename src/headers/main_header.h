@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <math.h>
 #include "../../../ilab/common/log.h"
 #include "operations.h"
 #include "../../graph/create_graph.h"
