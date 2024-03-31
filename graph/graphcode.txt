@@ -24,5 +24,5 @@ digraph G
 	node_num0x4dbb860 -> node_num0x4dbb7a0;
 	node_num0x4dbb7a0 [shape = "record", color="#478056", label = "{0.00 | {NUM | 0x4dbb7a0} | {(nil) | (nil)}}"];
 	node_num0x4dbba40 -> node_num0x4dbb740;
-	node_num0x4dbb740 [shape = "record", color="#478056", label = "{0.00 | {NUM | 0x4dbb740} | {(nil) | (nil)}}"];
+	node_num0x4dbb740 [shape = "record", color="#478056", label = "{4.00 | {NUM | 0x4dbb740} | {(nil) | (nil)}}"];
 }
