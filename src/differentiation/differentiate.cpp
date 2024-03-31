@@ -27,6 +27,8 @@ node_t *differen(node_t *node)
 
         case DIV: return _DIV_OP();
         
+        //case POW: return _POW_OP();
+
         default:
             return NULL;
         }
