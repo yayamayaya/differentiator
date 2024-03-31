@@ -1,7 +1,7 @@
-mh = src/headers/main_header.h
+mh = src/headers/main.h
 dh = src/headers/differentiate.h
 
-diff:	file_reader.o expr_reader.o expr_reader.o graph_create.o global.o calc_expr.o differen.o create_node.o
+diff:	file_reader.o expr_reader.o expr_reader.o graph_create.o global.o calc_expr.o differen.o create_node.o main.o
 	g++ -Wall -o bin/differentiator bin/file_reader.o bin/expr_reader.o bin/graph.o bin/global.o bin/main.o bin/calc_expr.o bin/differen.o bin/create_node.o
 
 diff_debug:	 file_reader.o expr_reader.o expr_reader.o graph_create.o global.o calc_expr.o
