@@ -14,6 +14,13 @@ int read_file(char **buffer_ptr, int *size_of_file, const char *expression_file_
 
     int file_size = get_file_size(expression_file);
     LOG("> size of file is: %d\n", file_size);
+    if (file_size == 0)
+    {
+        LOG(">>> couldn't read file: it's empty\n");
+        fclose(expression_file);
+        return EMPTY_FILE;
+    }
+    
     
     char *buffer = (char *)calloc(file_size + 1, sizeof(char));
     if (!buffer)
@@ -26,10 +33,6 @@ int read_file(char **buffer_ptr, int *size_of_file, const char *expression_file_
     if ((int)fread(buffer, sizeof(char), file_size, expression_file) < file_size)
         LOG(">>> file wasn't read fully%40s\n", "[error]");
     
-    /*for (int i = 0; i < file_size; i++)
-    {
-        fprintf(stderr, "<%c>", buffer[i]);
-    }*/
 
     *buffer_ptr = buffer;
     *size_of_file = file_size;
