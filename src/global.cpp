@@ -9,6 +9,7 @@ operation_t operations[OPERATIONS_NUMBER] =
     {"*", MULT, 1},
     {"/", DIV, 1},
     {"^", POW, 1},
+    //{"sqrt", SQRT, 4},
     {"sin", SIN, 3},
     {"cos", COS, 3},
     {"tg", TAN, 2},
