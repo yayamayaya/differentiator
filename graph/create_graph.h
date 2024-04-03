@@ -10,23 +10,6 @@
 #define EXPR_LOC "data/expression_to_diff.txt"
 #define PNG_LOC "dot graph/graphcode.txt -Tpng -otree.png"
 
-#ifdef DEBUG
-#define OPEN_LOG_FILE() diff_log = fopen("log/graph_creation.log", "wb");   \
-    if (!diff_log)                                                          \
-    {                                                                       \
-        fprintf(stderr, ">>> Couldn't open logfile.");                      \
-        return ERR;                                                         \
-    }                                                                       \
-    setbuf(diff_log, NULL)
-    
-#define CLOSE_LOG_FILE() fclose(diff_log)
-#else
-#define OPEN_LOG_FILE() do {} while (0)
-#define CLOSE_LOG_FILE() do {} while (0)
-#endif
-
-//#define SYSTEM_CALL(codeName, pictureName)  "dot  "#codeName"-Tpng -o"#pictureName
-
 #define GPRAPH_CODE_START   "digraph G\n\
 {\n\
     graph [dpi = 1000];\n\
