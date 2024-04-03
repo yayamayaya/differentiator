@@ -1,4 +1,4 @@
-#include "../headers/differentiate.h"
+#include "differentiate.h"
 
 node_t *differen(node_t *node)
 {
@@ -21,19 +21,21 @@ node_t *differen(node_t *node)
         {
         case ADD:
         case SUB:
-            return create_node(node->data.operation, OPERATION, differen(node->l), differen(node->r));
+            return create_node((unsigned char)node->data.operation, OPERATION, differen(node->l), differen(node->r));
 
         case MULT: return _MULT_OP();
 
         case DIV: return _DIV_OP();
         
-        //case POW: return _POW_OP();
+        case POW: return _POW_OP();
 
         default:
+            LOG(">>> fatal error occured: operation was not found: %#04x%40s\n", node->data.operation, "[error]");
             return NULL;
         }
         break;
     default:
+        LOG(">>> fatal error occured: node data type was not found: %d%40s\n", node->data_type, "[error]");
         return NULL;
         //break;
     }
