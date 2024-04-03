@@ -17,6 +17,7 @@ enum OPERATIONS
     MULT        = 0x03,
     DIV         = 0x04,
     POW         = 0x05,
+    //SQRT        = 0x06,
 
     SIN         = 0x10,
     COS         = 0x11,
@@ -41,11 +42,6 @@ enum OPERATIONS
     OP_BRACK    = 0x00,
 
 };
-
-/*#define SUM +
-#define SUB -
-#define MUL *
-#define DIVISION */
 
 extern operation_t operations[OPERATIONS_NUMBER];
 
