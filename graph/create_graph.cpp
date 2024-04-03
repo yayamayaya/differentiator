@@ -54,13 +54,10 @@ void print_png(const int PNG_TYPE)
 
 void clear_all_png()
 {
-    //system("cd graph/operations \nrm *");
-    //system("cd graph/diff_operations \nrm *");
-    //system("cd ../..");
-    system("rm graph/operations");
-    system("rm graph/diff_operations");
-    system("rm differentiated_expression.png");
-    system("rm expression.png");
+    system("rm -f graph/operations/*");
+    system("rm -f graph/diff_operations/*");
+    system("rm -f differentiated_expression.png");
+    system("rm -f expression.png");
 }
 
 int go_through_tree(FILE *gcode, node_t *node)

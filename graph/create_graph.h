@@ -34,6 +34,15 @@
 
 #define DOT_CALL    "dot graph/graphcode.txt -Tpng -o"
 
+//#define GRAPH
+
+#ifdef GRAPH
+#define _CREATE_GRAPH(arg1, arg2)\
+    create_gparh_code(arg1, arg2)
+#else
+#define _CREATE_GRAPH(arg1, arg2)
+#endif
+
 enum PNG_NAMES
 {
     EXPR = 0,
