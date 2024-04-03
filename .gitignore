@@ -6,3 +6,5 @@ graph/operations
 graph/diff_operations
 tests/test_union.cpp
 expression.png
+graph/graphcode.txt
+expression.png
