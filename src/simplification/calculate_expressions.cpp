@@ -1,4 +1,4 @@
-#include "../headers/expr_calc.h"
+#include "expr_calc.h"
 
 int calculate(node_t *root)
 {
@@ -6,7 +6,7 @@ int calculate(node_t *root)
 
     if (root->data_type == NUMBER || root->data_type == VARIABLE)
     {
-        LOG(">>> Root is not an operation.\n");
+        LOG(">> Root is not an operation.\n");
         return NUMBER_IN_ROOT;        
     }
 
