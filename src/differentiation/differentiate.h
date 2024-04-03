@@ -37,13 +37,10 @@
 #define _CTH_OP()   _MULT(_MULT(_DIV(_NUM(1), _POW(_SH(copy_node(LEFT)), _NUM(2))), _NUM(-1)), differen(LEFT));
 #define _LOG_OP()   _MULT(_DIV(_NUM(1), _MULT(copy_node(RIGHT), _LN(copy_node(LEFT)))), differen(RIGHT));
 #define _LN_OP()    _MULT(_DIV(_NUM(1), copy_node(LEFT)), differen(LEFT))
-#define _ASIN_OP()  _MULT(, differen(LEFT))
-
-
-
-
-//#define 
-
+#define _ASIN_OP()  _MULT(_DIV(_NUM(1), _POW(_SUB(_NUM(1), _POW(copy_node(LEFT), _NUM(2))), _NUM(0.5))), differen(LEFT))
+#define _ACOS_OP()  _MULT(_DIV(_NUM(-1), _POW(_SUB(_NUM(1), _POW(copy_node(LEFT), _NUM(2))), _NUM(0.5))), differen(LEFT))
+#define _ATAN_OP()  _MULT(_DIV(_NUM(1), _ADD(_NUM(1), _POW(copy_node(LEFT), _NUM(2)))), differen(LEFT))
+#define _ACOT_OP()  _MULT(_DIV(_NUM(-1), _ADD(_NUM(1), _POW(copy_node(LEFT), _NUM(2)))), differen(LEFT))
 
 node_t *differen(node_t *node);
 node_t *copy_node(node_t *node);
