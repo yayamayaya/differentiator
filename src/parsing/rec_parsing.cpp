@@ -10,10 +10,9 @@ node_t *pars_expr(token_t *token_arr)
 
     while (token_arr[pos].data_type == OPERATION && (token_arr[pos].data.operation == ADD || token_arr[pos].data.operation == SUB))
     {
-        char cmd = (char)(token_arr[pos].data.operation);
+        unsigned char operation = token_arr[pos].data.operation;
         (pos)++;
-        fprintf(stderr, "sum_cmd: %d\n", (token_arr + (pos) - 1)->data.operation);
-        node = create_node(cmd, OPERATION, node, pars_mult(token_arr, &pos));
+        node = create_node(operation, OPERATION, node, pars_mult(token_arr, &pos));
     }
 
     return node;
@@ -27,9 +26,8 @@ node_t *pars_mult(token_t *token_arr, int *pos)
 
     while (token_arr[*pos].data_type == OPERATION && (token_arr[*pos].data.operation == MULT || token_arr[*pos].data.operation == DIV))
     {
-        char operation = (char)(token_arr[*pos].data.operation);
+        unsigned char operation = token_arr[*pos].data.operation;
         (*pos)++;
-        fprintf(stderr, "mult_cmd: %d\n", (token_arr + (*pos) - 1)->data.operation);
         node = create_node(operation, OPERATION, node, pars_power(token_arr, pos));
     }
 
@@ -44,7 +42,7 @@ node_t *pars_power(token_t *token_arr, int *pos)
 
     while (token_arr[*pos].data_type == OPERATION && token_arr[*pos].data.operation == POW)
     {
-        char operation = (char)(token_arr[*pos].data.operation);
+        unsigned char operation = token_arr[*pos].data.operation;
         (*pos)++;
         node = create_node(operation, OPERATION, node, pars_number(token_arr, pos));
     }
@@ -73,7 +71,7 @@ node_t *pars_number(token_t *token_arr, int *pos)
         else
         {
             LOG("> function creation\n");
-            char operation = token_arr[*pos].data.operation;
+            unsigned char operation = token_arr[*pos].data.operation;
             (*pos)++;            
             node = create_node(operation, OPERATION, pars_expr(token_arr), NULL);
             return node;
@@ -87,7 +85,7 @@ node_t *pars_number(token_t *token_arr, int *pos)
     }
     else if (token_arr[*pos].data_type == VARIABLE)
     {
-        char variable = (char)token_arr[*pos].data.variable;
+        unsigned char variable = token_arr[*pos].data.variable;
         LOG(">> variable found: <%c>\n", variable);
         node = create_node(variable, VARIABLE, NULL, NULL);
         (*pos)++;
