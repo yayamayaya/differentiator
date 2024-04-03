@@ -15,6 +15,8 @@
 #include "file_reader.h"
 #include "types.h"
 #include "log.h"
+#include "parsing.h"
+#include "../parsing/tokenizator.h"
 
 #define DEBUG
 
