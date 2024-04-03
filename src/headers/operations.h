@@ -1,12 +1,13 @@
 #ifndef OPERATIONS_H
 #define OPERATIONS_H
 
-#define OPERATIONS_NUMBER 20
+#define OPERATIONS_NUMBER 22
 
 typedef struct
 {
     const char* operation;
-    int operation_number;
+    unsigned char operation_number;
+    int string_length;
 } operation_t;
 
 enum OPERATIONS
@@ -35,6 +36,9 @@ enum OPERATIONS
     ACOS        = 0x41,
     ATAN        = 0x42,
     ACOT        = 0x43,
+
+    CL_BRACK    = 0xFF,
+    OP_BRACK    = 0x00,
 
 };
 
