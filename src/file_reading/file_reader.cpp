@@ -1,6 +1,6 @@
 #include "../headers/main.h"
 
-int read_file(char **buffer_ptr, const char *expression_file_loc)
+int read_file(char **buffer_ptr, int *size_of_file, const char *expression_file_loc)
 {
     assert(buffer_ptr);
     assert(expression_file_loc);
@@ -32,6 +32,7 @@ int read_file(char **buffer_ptr, const char *expression_file_loc)
     }*/
 
     *buffer_ptr = buffer;
+    *size_of_file = file_size;
     LOG(">> file was read\n");
     fclose(expression_file);
 
