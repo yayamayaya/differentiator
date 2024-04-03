@@ -2,25 +2,37 @@
 
 int main(int argc, char const *argv[])
 {
-    //fprintf(stderr, ">> starting programm\n");
-    //clear_all_png();
     _OPEN_LOG("log/diff_log.log");
-    //fprintf(stderr, "//diff_log = %p\n", diff_log);
+    LOG("-> starting programm:\n\n");
+    clear_all_png();
 
-    node_t *root = create_expr_tree("data/expression_to_diff.txt");
+    token_t *token_arr = {};
+    if (tokenizator(&token_arr, EXPR_LOC))
+    {
+        LOG(">>> tokenization did not work%40s\n\n", "[error]");
+        _CLOSE_LOG();
+        return 1;
+    }
+    LOG("\n-> tokenization done, token array pointer is %p;\n\n", token_arr);
+
+    node_t *root = pars_expr(token_arr);
+    LOG("\n-> expression was parsed, root pointer is %p\n\n", root);
+
     calculate(root);
-    LOG("> starting differentiation\n");
+    LOG("\n-> pre-diff calculations were done\n\n");
+    _CREATE_GRAPH(root, EXPR);
+
     node_t *diff_root = differen(root);
+    LOG("\n-> expression was differentiated, diff. root pointer is %p\n\n", diff_root);
+
     calculate(diff_root);
-    LOG(">differentiation done\n");
-    fprintf(stderr, ">> calculation done\n");
-    create_gparh_code(root, EXPR);
-    create_gparh_code(diff_root, DIFF_EXPR);
-    //system(PNG_LOC);
-    //Напечатать дерево
-    //Записать полученное дерево в файл
+    LOG("\n-> post-diff calculations were done\n\n");
+    _CREATE_GRAPH(diff_root, DIFF_EXPR);
+
     tree_kill(root);
     tree_kill(diff_root);
+    free(token_arr);
+    LOG("\n-> programm ended successfully");
     _CLOSE_LOG();
     return 0;
 }
