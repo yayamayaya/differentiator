@@ -6,5 +6,11 @@ graph/operations
 graph/diff_operations
 tests/test_union.cpp
 expression.png
+differentiated_expression.png
 graph/graphcode.txt
-expression.png
+log/diff_log.log
+log/pars_test.log
+graph/graph
+graph/graphcode
+data/expression_to_diff.txt
+bin
