@@ -3,7 +3,7 @@
 
 typedef union
 {
-    char operation;
+    unsigned char operation;
     double number;
     char variable;
 } data_t;
