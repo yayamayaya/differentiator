@@ -10,7 +10,7 @@
 #include "headers/log.h"
 
 node_t *create_node(double data, int data_type, node_t *left_node, node_t *right_node);
-node_t *create_node(const char data, int data_type, node_t *left_node, node_t *right_node);
+node_t *create_node(const unsigned char data, int data_type, node_t *left_node, node_t *right_node);
 void node_print(const node_t *node);
 
 #endif
