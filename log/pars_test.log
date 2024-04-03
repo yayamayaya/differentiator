@@ -92,47 +92,320 @@ current pos: 63, the rest is: /4
 >> number 4.000000 detected
 current pos: 64, the rest is: 4
 
+>> token dump start:
+OPERATION: <0000>
+NUMBER: <82.00>
+OPERATION: <0x02>
+OPERATION: <0x10>
+OPERATION: <0000>
+OPERATION: <0x11>
+OPERATION: <0000>
+VARIABLE: <x>
+OPERATION: <0xff>
+OPERATION: <0xff>
+OPERATION: <0xff>
+OPERATION: <0x05>
+OPERATION: <0000>
+NUMBER: <67.00>
+OPERATION: <0x01>
+NUMBER: <91.00>
+OPERATION: <0x03>
+NUMBER: <2.00>
+OPERATION: <0x04>
+NUMBER: <32.00>
+OPERATION: <0xff>
+OPERATION: <0x03>
+NUMBER: <8.00>
+OPERATION: <0x01>
+NUMBER: <5.00>
+OPERATION: <0x03>
+NUMBER: <6.00>
+OPERATION: <0x02>
+NUMBER: <19.00>
+OPERATION: <0x01>
+OPERATION: <0000>
+NUMBER: <93.00>
+OPERATION: <0x02>
+NUMBER: <57.00>
+OPERATION: <0xff>
+OPERATION: <0x04>
+NUMBER: <4.00>
+>> token dump ended.
+
+
 >> tokenization was done. Tokens count is 38
+0x4dbbc10
+
+>> printing node number: 0x4dbbeb0
+DATA: <82.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
 > function creation
 > function creation
 >> variable found: <x>
+>> data given is: <120>
+
+>> printing node number: 0x4dbbf10
+DATA: <x>
+DATA_TYPE: <3>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <17>
+
+>> printing node number: 0x4dbbf70
+DATA: <0x11>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbbf10>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <16>
+
+>> printing node number: 0x4dbbfd0
+DATA: <0x10>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbbf70>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <2>
+
+>> printing node number: 0x4dbc030
+DATA: <0x02>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbbeb0>
+RIGHT_PTR: <0x4dbbfd0>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc090
+DATA: <67.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc0f0
+DATA: <91.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc150
+DATA: <2.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc1b0
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc0f0>
+RIGHT_PTR: <0x4dbc150>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc210
+DATA: <32.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <4>
+
+>> printing node number: 0x4dbc270
+DATA: <0x04>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc1b0>
+RIGHT_PTR: <0x4dbc210>
+>> node was printed.
+
+>> data given is: <1>
+
+>> printing node number: 0x4dbc2d0
+DATA: <0x01>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc090>
+RIGHT_PTR: <0x4dbc270>
+>> node was printed.
+
+>> data given is: <5>
+
+>> printing node number: 0x4dbc330
+DATA: <0x05>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc030>
+RIGHT_PTR: <0x4dbc2d0>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc390
+DATA: <8.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc3f0
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc330>
+RIGHT_PTR: <0x4dbc390>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc450
+DATA: <5.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc4b0
+DATA: <6.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc510
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc450>
+RIGHT_PTR: <0x4dbc4b0>
+>> node was printed.
+
+>> data given is: <1>
+
+>> printing node number: 0x4dbc570
+DATA: <0x01>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc3f0>
+RIGHT_PTR: <0x4dbc510>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc5d0
+DATA: <19.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <2>
+
+>> printing node number: 0x4dbc630
+DATA: <0x02>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc570>
+RIGHT_PTR: <0x4dbc5d0>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc690
+DATA: <93.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc6f0
+DATA: <57.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <2>
+
+>> printing node number: 0x4dbc750
+DATA: <0x02>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc690>
+RIGHT_PTR: <0x4dbc6f0>
+>> node was printed.
+
+
+>> printing node number: 0x4dbc7b0
+DATA: <4.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <4>
+
+>> printing node number: 0x4dbc810
+DATA: <0x04>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc750>
+RIGHT_PTR: <0x4dbc7b0>
+>> node was printed.
+
+>> data given is: <1>
+
+>> printing node number: 0x4dbc870
+DATA: <0x01>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc630>
+RIGHT_PTR: <0x4dbc810>
+>> node was printed.
+
 > the end of the tree found, the object is: 82.000000
-> left tree found with the pointer: 0x4dbcef0
+> left tree found with the pointer: 0x4dbbeb0
 > the end of the tree found, the object is: 0.000000
-> left tree found with the pointer: 0x4dbcf50
-> left tree found with the pointer: 0x4dbcfb0
-> right tree found with the pointer: 0x4dbd010
-> left tree found with the pointer: 0x4dbd070
+> left tree found with the pointer: 0x4dbbf10
+> left tree found with the pointer: 0x4dbbf70
+> right tree found with the pointer: 0x4dbbfd0
+> left tree found with the pointer: 0x4dbc030
 > the end of the tree found, the object is: 67.000000
-> left tree found with the pointer: 0x4dbd0d0
+> left tree found with the pointer: 0x4dbc090
 > the end of the tree found, the object is: 91.000000
-> left tree found with the pointer: 0x4dbd130
+> left tree found with the pointer: 0x4dbc0f0
 > the end of the tree found, the object is: 2.000000
-> right tree found with the pointer: 0x4dbd190
-> left tree found with the pointer: 0x4dbd1f0
+> right tree found with the pointer: 0x4dbc150
+> left tree found with the pointer: 0x4dbc1b0
 > the end of the tree found, the object is: 32.000000
-> right tree found with the pointer: 0x4dbd250
-> right tree found with the pointer: 0x4dbd2b0
-> right tree found with the pointer: 0x4dbd310
-> left tree found with the pointer: 0x4dbd370
+> right tree found with the pointer: 0x4dbc210
+> right tree found with the pointer: 0x4dbc270
+> right tree found with the pointer: 0x4dbc2d0
+> left tree found with the pointer: 0x4dbc330
 > the end of the tree found, the object is: 8.000000
-> right tree found with the pointer: 0x4dbd3d0
-> left tree found with the pointer: 0x4dbd430
+> right tree found with the pointer: 0x4dbc390
+> left tree found with the pointer: 0x4dbc3f0
 > the end of the tree found, the object is: 5.000000
-> left tree found with the pointer: 0x4dbd490
+> left tree found with the pointer: 0x4dbc450
 > the end of the tree found, the object is: 6.000000
-> right tree found with the pointer: 0x4dbd4f0
-> right tree found with the pointer: 0x4dbd550
-> left tree found with the pointer: 0x4dbd5b0
+> right tree found with the pointer: 0x4dbc4b0
+> right tree found with the pointer: 0x4dbc510
+> left tree found with the pointer: 0x4dbc570
 > the end of the tree found, the object is: 19.000000
-> right tree found with the pointer: 0x4dbd610
-> left tree found with the pointer: 0x4dbd670
+> right tree found with the pointer: 0x4dbc5d0
+> left tree found with the pointer: 0x4dbc630
 > the end of the tree found, the object is: 93.000000
-> left tree found with the pointer: 0x4dbd6d0
+> left tree found with the pointer: 0x4dbc690
 > the end of the tree found, the object is: 57.000000
-> right tree found with the pointer: 0x4dbd730
-> left tree found with the pointer: 0x4dbd790
+> right tree found with the pointer: 0x4dbc6f0
+> left tree found with the pointer: 0x4dbc750
 > the end of the tree found, the object is: 4.000000
-> right tree found with the pointer: 0x4dbd7f0
-> right tree found with the pointer: 0x4dbd850
+> right tree found with the pointer: 0x4dbc7b0
+> right tree found with the pointer: 0x4dbc810
 >> tree was read succes fully

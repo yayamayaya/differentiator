@@ -1,0 +1,240 @@
+-> starting programm:
+
+> size of file is: 5
+>> file was read
+>> variable detected
+current pos: 0, the rest is: x ^ 2
+current pos: 2, the rest is: ^ 2
+>> operation '^' detected <5>
+current pos: 2, the rest is: ^ 2
+current pos: 4, the rest is: 2
+>> number 2.000000 detected
+current pos: 4, the rest is: 2
+
+>> token dump start:
+VARIABLE: <x>
+OPERATION: <0x05>
+NUMBER: <2.00>
+>> token dump ended.
+
+
+>> tokenization was done. Tokens count is 4
+
+-> tokenization done, token array pointer is 0x4dbbbd0;
+
+>> variable found: <x>
+>> data given is: <120>
+
+>> printing node number: 0x4dbbc50
+DATA: <x>
+DATA_TYPE: <3>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbbcb0
+DATA: <2.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <5>
+
+>> printing node number: 0x4dbbd10
+DATA: <0x05>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbbc50>
+RIGHT_PTR: <0x4dbbcb0>
+>> node was printed.
+
+
+-> expression was parsed, root pointer is 0x4dbbd10
+
+> Variable found: x
+> Number 2.000000 founded
+> Nodes on node 0x4dbbd10 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+
+-> pre-diff calculations were done
+
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbbc50
+> the end of the tree found, the object is: 2.000000
+> right tree found with the pointer: 0x4dbbcb0
+>> tree was read succes fully
+> OPERATION was found for diffing
+> VARIABLE was found and diffed
+
+>> printing node number: 0x4dbbf90
+DATA: <1.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+
+>> printing node number: 0x4dbbff0
+DATA: <1.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <2>
+
+>> printing node number: 0x4dbc0b0
+DATA: <0x02>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc050>
+RIGHT_PTR: <0x4dbbff0>
+>> node was printed.
+
+>> data given is: <5>
+
+>> printing node number: 0x4dbc170
+DATA: <0x05>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc110>
+RIGHT_PTR: <0x4dbc0b0>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc230
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc1d0>
+RIGHT_PTR: <0x4dbc170>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc290
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc230>
+RIGHT_PTR: <0x4dbbf90>
+>> node was printed.
+
+> NUMBER was found and diffed
+
+>> printing node number: 0x4dbc2f0
+DATA: <0.00>
+DATA_TYPE: <1>
+LEFT_PTR: <(nil)>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <49>
+
+>> printing node number: 0x4dbc3b0
+DATA: <0x31>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc350>
+RIGHT_PTR: <(nil)>
+>> node was printed.
+
+>> data given is: <5>
+
+>> printing node number: 0x4dbc4d0
+DATA: <0x05>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc470>
+RIGHT_PTR: <0x4dbc410>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc530
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc4d0>
+RIGHT_PTR: <0x4dbc3b0>
+>> node was printed.
+
+>> data given is: <3>
+
+>> printing node number: 0x4dbc590
+DATA: <0x03>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc530>
+RIGHT_PTR: <0x4dbc2f0>
+>> node was printed.
+
+>> data given is: <1>
+
+>> printing node number: 0x4dbc5f0
+DATA: <0x01>
+DATA_TYPE: <2>
+LEFT_PTR: <0x4dbc590>
+RIGHT_PTR: <0x4dbc290>
+>> node was printed.
+
+
+-> expression was differentiated, diff. root pointer is 0x4dbc5f0
+
+> Variable found: x
+> Number 2.000000 founded
+> Nodes on node 0x4dbc4d0 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Variable found: x
+> Node has not been operated on, returning NULL
+> Nodes on node 0x4dbc3b0 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Nodes on node 0x4dbc530 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Number 0.000000 founded
+> Nodes on node 0x4dbc590 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Number 2.000000 founded
+> Variable found: x
+> Number 2.000000 founded
+> Number 1.000000 founded
+> Nodes on node 0x4dbc0b0 was calculated
+> result of calc is: 1.000000
+> node was translated to number
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbbc50
+> the end of the tree found, the object is: 2.000000
+> right tree found with the pointer: 0x4dbbcb0
+>> tree was read succes fully
+> Nodes on node 0x4dbc170 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Nodes on node 0x4dbc230 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Number 1.000000 founded
+> Nodes on node 0x4dbc290 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+> Nodes on node 0x4dbc5f0 was calculated
+> One of the child nodes returned NULL, operation will not be executed
+
+-> post-diff calculations were done
+
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbc470
+> the end of the tree found, the object is: 2.000000
+> right tree found with the pointer: 0x4dbc410
+> left tree found with the pointer: 0x4dbc4d0
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbc350
+> right tree found with the pointer: 0x4dbc3b0
+> left tree found with the pointer: 0x4dbc530
+> the end of the tree found, the object is: 0.000000
+> right tree found with the pointer: 0x4dbc2f0
+> left tree found with the pointer: 0x4dbc590
+> the end of the tree found, the object is: 2.000000
+> left tree found with the pointer: 0x4dbc1d0
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbc110
+> the end of the tree found, the object is: 1.000000
+> right tree found with the pointer: 0x4dbc0b0
+> right tree found with the pointer: 0x4dbc170
+> left tree found with the pointer: 0x4dbc230
+> the end of the tree found, the object is: 1.000000
+> right tree found with the pointer: 0x4dbbf90
+> right tree found with the pointer: 0x4dbc290
+>> tree was read succes fully
+
+-> programm ended successfully
