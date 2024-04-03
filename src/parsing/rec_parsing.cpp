@@ -1,4 +1,4 @@
-#include "../headers/parsing.h"
+#include "parsing.h"
 
 node_t *pars_expr(token_t *token_arr, int *pos)
 {

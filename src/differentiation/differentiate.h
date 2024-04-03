@@ -1,7 +1,7 @@
 #ifndef DIFFERENT
 #define DIFFERENT
 
-#include "main.h"
+#include "../headers/main.h"
 
 #define LEFT node->l
 #define RIGHT node->r

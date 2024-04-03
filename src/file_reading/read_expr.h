@@ -1,7 +1,7 @@
 #ifndef READ_EXPR
 #define READ_EXPR
 
-#include "types.h"
+#include "../headers/types.h"
 
 node_t *create_expr_tree(const char* expression_file_location);
 node_t *create_tree(char *buffer);

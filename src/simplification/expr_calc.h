@@ -1,7 +1,7 @@
 #ifndef EXPR_CALC
 #define EXPR_CALC
 
-#include "main.h"
+#include "../headers/main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

@@ -3,12 +3,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "types.h"
-#include "log.h"
-#include "operations.h"
-#include "create_node.h"
+#include "../headers/types.h"
+#include "../headers/log.h"
+#include "../headers/operations.h"
+#include "../create_node.h"
 #include "../../graph/create_graph.h"
-#include "../parsing/tokenizator.h"
+#include "tokenizator.h"
 
 node_t *pars_expr(token_t *token_arr, int *pos);
 node_t *pars_mult(token_t *token_arr, int *pos);
