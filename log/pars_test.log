@@ -1,0 +1,138 @@
+> size of file is: 65
+>> file was read
+>> operation '(' detected <0>
+current pos: 0, the rest is: (82 - sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> number 82.000000 detected
+current pos: 1, the rest is: 82 - sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 4, the rest is: - sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '-' detected <2>
+current pos: 4, the rest is: - sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 6, the rest is: sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation 'sin' detected <16>
+current pos: 6, the rest is: sin(cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '(' detected <0>
+current pos: 9, the rest is: (cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation 'cos' detected <17>
+current pos: 10, the rest is: cos(x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '(' detected <0>
+current pos: 13, the rest is: (x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> variable detected
+current pos: 14, the rest is: x))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation ')' detected <255>
+current pos: 15, the rest is: ))) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation ')' detected <255>
+current pos: 16, the rest is: )) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation ')' detected <255>
+current pos: 17, the rest is: ) ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 19, the rest is: ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '^' detected <5>
+current pos: 19, the rest is: ^ (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 21, the rest is: (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '(' detected <0>
+current pos: 21, the rest is: (67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> number 67.000000 detected
+current pos: 22, the rest is: 67 + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 25, the rest is: + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '+' detected <1>
+current pos: 25, the rest is: + 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 27, the rest is: 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> number 91.000000 detected
+current pos: 27, the rest is: 91 * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 30, the rest is: * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '*' detected <3>
+current pos: 30, the rest is: * 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 32, the rest is: 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> number 2.000000 detected
+current pos: 32, the rest is: 2 / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 34, the rest is: / 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation '/' detected <4>
+current pos: 34, the rest is: / 32)*8 +5 * 6 - 19 + (93-57)/4
+current pos: 36, the rest is: 32)*8 +5 * 6 - 19 + (93-57)/4
+>> number 32.000000 detected
+current pos: 36, the rest is: 32)*8 +5 * 6 - 19 + (93-57)/4
+>> operation ')' detected <255>
+current pos: 38, the rest is: )*8 +5 * 6 - 19 + (93-57)/4
+>> operation '*' detected <3>
+current pos: 39, the rest is: *8 +5 * 6 - 19 + (93-57)/4
+>> number 8.000000 detected
+current pos: 40, the rest is: 8 +5 * 6 - 19 + (93-57)/4
+current pos: 42, the rest is: +5 * 6 - 19 + (93-57)/4
+>> operation '+' detected <1>
+current pos: 42, the rest is: +5 * 6 - 19 + (93-57)/4
+>> number 5.000000 detected
+current pos: 43, the rest is: 5 * 6 - 19 + (93-57)/4
+current pos: 45, the rest is: * 6 - 19 + (93-57)/4
+>> operation '*' detected <3>
+current pos: 45, the rest is: * 6 - 19 + (93-57)/4
+current pos: 47, the rest is: 6 - 19 + (93-57)/4
+>> number 6.000000 detected
+current pos: 47, the rest is: 6 - 19 + (93-57)/4
+current pos: 49, the rest is: - 19 + (93-57)/4
+>> operation '-' detected <2>
+current pos: 49, the rest is: - 19 + (93-57)/4
+current pos: 51, the rest is: 19 + (93-57)/4
+>> number 19.000000 detected
+current pos: 51, the rest is: 19 + (93-57)/4
+current pos: 54, the rest is: + (93-57)/4
+>> operation '+' detected <1>
+current pos: 54, the rest is: + (93-57)/4
+current pos: 56, the rest is: (93-57)/4
+>> operation '(' detected <0>
+current pos: 56, the rest is: (93-57)/4
+>> number 93.000000 detected
+current pos: 57, the rest is: 93-57)/4
+>> operation '-' detected <2>
+current pos: 59, the rest is: -57)/4
+>> number 57.000000 detected
+current pos: 60, the rest is: 57)/4
+>> operation ')' detected <255>
+current pos: 62, the rest is: )/4
+>> operation '/' detected <4>
+current pos: 63, the rest is: /4
+>> number 4.000000 detected
+current pos: 64, the rest is: 4
+
+>> tokenization was done. Tokens count is 38
+> function creation
+> function creation
+>> variable found: <x>
+> the end of the tree found, the object is: 82.000000
+> left tree found with the pointer: 0x4dbcef0
+> the end of the tree found, the object is: 0.000000
+> left tree found with the pointer: 0x4dbcf50
+> left tree found with the pointer: 0x4dbcfb0
+> right tree found with the pointer: 0x4dbd010
+> left tree found with the pointer: 0x4dbd070
+> the end of the tree found, the object is: 67.000000
+> left tree found with the pointer: 0x4dbd0d0
+> the end of the tree found, the object is: 91.000000
+> left tree found with the pointer: 0x4dbd130
+> the end of the tree found, the object is: 2.000000
+> right tree found with the pointer: 0x4dbd190
+> left tree found with the pointer: 0x4dbd1f0
+> the end of the tree found, the object is: 32.000000
+> right tree found with the pointer: 0x4dbd250
+> right tree found with the pointer: 0x4dbd2b0
+> right tree found with the pointer: 0x4dbd310
+> left tree found with the pointer: 0x4dbd370
+> the end of the tree found, the object is: 8.000000
+> right tree found with the pointer: 0x4dbd3d0
+> left tree found with the pointer: 0x4dbd430
+> the end of the tree found, the object is: 5.000000
+> left tree found with the pointer: 0x4dbd490
+> the end of the tree found, the object is: 6.000000
+> right tree found with the pointer: 0x4dbd4f0
+> right tree found with the pointer: 0x4dbd550
+> left tree found with the pointer: 0x4dbd5b0
+> the end of the tree found, the object is: 19.000000
+> right tree found with the pointer: 0x4dbd610
+> left tree found with the pointer: 0x4dbd670
+> the end of the tree found, the object is: 93.000000
+> left tree found with the pointer: 0x4dbd6d0
+> the end of the tree found, the object is: 57.000000
+> right tree found with the pointer: 0x4dbd730
+> left tree found with the pointer: 0x4dbd790
+> the end of the tree found, the object is: 4.000000
+> right tree found with the pointer: 0x4dbd7f0
+> right tree found with the pointer: 0x4dbd850
+>> tree was read succes fully
