@@ -120,28 +120,27 @@ void token_dump(const token_t *token_arr, const int token_arr_size)
     assert(token_arr);
     assert(token_arr_size > 0);
 
-    setbuf(stdout, NULL);
-
-    printf(">> token dump start:\n");
+    LOG("\n>> token dump start:\n");
     for (int pos = 0; pos < token_arr_size; pos++)
         switch (token_arr[pos].data_type)
         {
         case NUMBER:
-            printf("NUMBER: <%.2lf>\n", token_arr[pos].data.number);
+            LOG("NUMBER: <%.2lf>\n", token_arr[pos].data.number);
             break;
 
         case OPERATION:
-            printf("OPERATION: <%#04x>\n", token_arr[pos].data.operation);
+            LOG("OPERATION: <%#04x>\n", token_arr[pos].data.operation);
             break;
         
         case VARIABLE:
-            printf("VARIABLE: <%c>\n", token_arr[pos].data.variable);
+            LOG("VARIABLE: <%c>\n", token_arr[pos].data.variable);
             break;
         
         default:
+            LOG(">>> fatal error%40s\n", "[error]");
             break;
         }
     
-    printf(">> token dump ended.\n\n");
+    LOG(">> token dump ended.\n\n");
     return;
 }
