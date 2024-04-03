@@ -1,17 +1,19 @@
 #include "parsing.h"
 
-node_t *pars_expr(token_t *token_arr, int *pos)
+node_t *pars_expr(token_t *token_arr)
 {
     assert(token_arr);
 
-    node_t *node = pars_mult(token_arr, pos);
+    static int pos = 0;
 
-    while (token_arr[*pos].data_type == OPERATION && (token_arr[*pos].data.operation == ADD || token_arr[*pos].data.operation == SUB))
+    node_t *node = pars_mult(token_arr, &pos);
+
+    while (token_arr[pos].data_type == OPERATION && (token_arr[pos].data.operation == ADD || token_arr[pos].data.operation == SUB))
     {
-        char cmd = (char)(token_arr[*pos].data.operation);
-        (*pos)++;
-        fprintf(stderr, "sum_cmd: %d\n", (token_arr + (*pos) - 1)->data.operation);
-        node = create_node(cmd, OPERATION, node, pars_mult(token_arr, pos));
+        char cmd = (char)(token_arr[pos].data.operation);
+        (pos)++;
+        fprintf(stderr, "sum_cmd: %d\n", (token_arr + (pos) - 1)->data.operation);
+        node = create_node(cmd, OPERATION, node, pars_mult(token_arr, &pos));
     }
 
     return node;
@@ -60,7 +62,7 @@ node_t *pars_number(token_t *token_arr, int *pos)
         if (token_arr[*pos].data.operation == OP_BRACK)
         {
             (*pos)++;
-            node = pars_expr(token_arr, pos);
+            node = pars_expr(token_arr);
             if (token_arr[*pos].data.operation != CL_BRACK)
                 LOG(">>> closing bracket wasn't found, character is: %#04x%40s\n", token_arr[*pos].data.operation, "[error]");                    
             else
@@ -73,7 +75,7 @@ node_t *pars_number(token_t *token_arr, int *pos)
             LOG("> function creation\n");
             char operation = token_arr[*pos].data.operation;
             (*pos)++;            
-            node = create_node(operation, OPERATION, pars_expr(token_arr, pos), NULL);
+            node = create_node(operation, OPERATION, pars_expr(token_arr), NULL);
             return node;
         }
     }
