@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../src/headers/types.h"
-#include "../src/headers/log.h"
+#include "../../common/tree_func/types.h"
+#include "../../common/log/log.h"
 
 #define EXPR_LOC "data/expression_to_diff.txt"
 #define PNG_LOC "dot graph/graphcode.txt -Tpng -otree.png"

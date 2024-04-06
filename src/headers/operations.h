@@ -17,7 +17,6 @@ enum OPERATIONS
     MULT        = 0x03,
     DIV         = 0x04,
     POW         = 0x05,
-    //SQRT        = 0x06,
 
     SIN         = 0x10,
     COS         = 0x11,
@@ -29,9 +28,9 @@ enum OPERATIONS
     TH          = 0x22,
     CTH         = 0x23,
 
-    LOG         = 0x30,
     LN          = 0x31,
     LG          = 0x32,
+    SQRT        = 0x33,
 
     ASIN        = 0x40,
     ACOS        = 0x41,

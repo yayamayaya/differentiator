@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
+#define _USE_MATH_DEFINES
+
 enum CALC_ERRORS
 {
     NUMBER_IN_ROOT = 501,
@@ -14,7 +16,7 @@ enum CALC_ERRORS
 
 int calculate(node_t *root);
 node_t *calculate_tree(node_t *node);
-double make_operation(double first_arg, double second_arg, char operation_number);
+int make_operation(node_t *left_node, node_t *right_node, node_t *node);
 void op_to_num_node(node_t *node);
 
 #endif
