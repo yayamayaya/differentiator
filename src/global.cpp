@@ -1,6 +1,6 @@
 #include "headers/main.h"
 
-FILE *diff_log = NULL;
+FILE *logs = NULL;
 
 operation_t operations[OPERATIONS_NUMBER] = 
 {
@@ -9,7 +9,7 @@ operation_t operations[OPERATIONS_NUMBER] =
     {"*", MULT, 1},
     {"/", DIV, 1},
     {"^", POW, 1},
-    //{"sqrt", SQRT, 4},
+    {"sqrt", SQRT, 4},
     {"sin", SIN, 3},
     {"cos", COS, 3},
     {"tg", TAN, 2},
@@ -18,7 +18,6 @@ operation_t operations[OPERATIONS_NUMBER] =
     {"ch", CH, 2},
     {"th", TH, 2},
     {"cth", CTH, 3},
-    {"log", LOG, 3},
     {"ln", LN, 2},
     {"lg", LG, 2},
     {"arcsin", ASIN, 6},
