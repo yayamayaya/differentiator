@@ -17,13 +17,14 @@ int tokenizator(token_t **token_arr_ptr, const char *file_name)
         free(buff);
         return error;        
     }
-
-    token_t *token_arr = (token_t *)calloc(INITIAL_TOKEN_ARR_SIZE, sizeof(token_t));
+    
+    int token_arr_size = INITIAL_TOKEN_ARR_SIZE;
+    token_t *token_arr = (token_t *)calloc(token_arr_size, sizeof(token_t));
     if (!token_arr)
     {
         LOG(">>> couldn't allocate memory for token array%40s\n", "[error]");
         free(buff);
-        return 15;
+        return MEM_ALC_ERR;
     }
     
     int token_num = 0;
@@ -31,14 +32,25 @@ int tokenizator(token_t **token_arr_ptr, const char *file_name)
     for (int pos = 0; pos < file_size;)
     {
         token_t token = detect_token(buff, &pos);
-        if (token.data_type != 0)
+        if (token.data_type == SYNTAX_NOT_DET)        
+        {
+            free(token_arr);
+            free(buff);
+            return SYNTAX_ERR;
+        }
+        else if (token.data_type != 0)
         {
             token_arr[token_num] = token;
             token_num++;
             if (token_num == INITIAL_TOKEN_ARR_SIZE)
+            {
+                token_arr_size *= 2;
                 token_arr = token_realloc(token_arr, INITIAL_TOKEN_ARR_SIZE * 2);
+            }
         }
     }
+
+    LOG("> total token count is %d\n", token_num);
     
     token_arr = token_realloc(token_arr, token_num + 1);
     *token_arr_ptr = token_arr;
@@ -48,7 +60,6 @@ int tokenizator(token_t **token_arr_ptr, const char *file_name)
 
     LOG("\n>> tokenization was done. Tokens count is %d\n", token_num + 1);
     return 0;
-
 }
 
 token_t *token_realloc(token_t *token_arr, int arr_size)
@@ -112,6 +123,7 @@ token_t detect_token(char *buff, int *pos)
     }
 
     LOG(">>> couldn't detect token, syntax error.%40s\n", "[error]");
+    token.data_type = SYNTAX_NOT_DET;
     return token;
 }
 
