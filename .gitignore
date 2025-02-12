@@ -18,3 +18,5 @@ build
 differentiator.log
 old_differ
 .gitignore
+tree_graphics
+logging
