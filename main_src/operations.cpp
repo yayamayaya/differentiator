@@ -39,5 +39,5 @@ operation_t arithm_operations::find_operation(const char *string, unsigned int &
             return operations[op_num].operation_number;
         }
 
-    return 0;
+    return NO_OP;
 }
