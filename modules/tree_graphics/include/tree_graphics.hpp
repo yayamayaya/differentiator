@@ -6,9 +6,8 @@
 
 #define GRAPHICS_DIR        "./tree_graphics/"
 #define GRAPH_CODE_LOCATION "tree_graphics/graph_code"
-#define PRINT_CMD           "dot ./tree_graphics/graphcode.txt -Tpng -otree.png"
 
-#define GPRAPH_CODE_START\
+#define GPRAPH_CODE_START \
 "digraph G\n\
 {\n\
     graph [dpi = 1000];\n\
@@ -27,16 +26,16 @@
 
 #define GRAPH_NUMBER_NODE   "\tnode_num%p [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.number, node, node->l_node, node->r_node
-#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
+#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%d | {OP | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.operation, node, node->l_node, node->r_node
-#define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%c | {VAR | %p} | {%p | %p}}\"];\n", \
+#define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%d | {VAR | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.variable, node, node->l_node, node->r_node
 
 
 #define LEFT_NODE           "\tnode_num%p -> node_num%p;\n", node, node->l_node
 #define RIGHT_NODE          "\tnode_num%p -> node_num%p;\n", node, node->r_node
 
-#define DOT_CALL    "dot graph/graphcode.txt -Tpng -o"
+#define DOT_CALL    "dot tree_graphics/graphcode.txt -Tpng -o./tree_graphics/"
 
 //#define GRAPH
 
@@ -47,24 +46,6 @@
 #define _CREATE_GRAPH(arg1, arg2)
 #endif
 
-enum PNG_NAMES
-{
-    EXPR = 0,
-    DIFF_EXPR,
-    OP,
-    DIFF_OP,
-};
-
-enum GRAPH_ERRORS
-{
-    ERR = 1,
-    NO_ERR = 0,
-};
-
-int create_gparh_code(node_t *node);
-
 no_ret_val_t clear_old_graphics();
-
-int go_through_tree(FILE *gcode, node_t *node);
 
 #endif
