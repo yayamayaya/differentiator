@@ -9,7 +9,7 @@ tokens_arr::~tokens_arr()
 
 token_t *tokens_arr::return_data() 
 {
-    token_t *returning_data = new token_t[token_num];
+    token_t *returning_data = new token_t[token_num + 1];
     _RETURN_ON_TRUE(!returning_data, NULL);
 
     std::copy(tokens, tokens + token_num, returning_data);

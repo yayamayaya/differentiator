@@ -3,6 +3,7 @@
 
 #include "tree_func.hpp"
 #include "debugging.hpp"
+#include <algorithm>
 #include <memory.h>
 #include <stdlib.h>
 
