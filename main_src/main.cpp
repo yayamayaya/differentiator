@@ -1,7 +1,7 @@
 #include <iostream>
 #include "debugging.hpp"
 #include "tokenizator.hpp"
-//#include "main.h"
+#include "parser.hpp"
 
 //void simpl_expr(node_t **root);
 
@@ -17,18 +17,18 @@ int main(int argc, char const *argv[])
     open_log();
     LOG(LONG_LINE);
     LOG("> starting programm...\n");
-    //clear_all_png();
+    clear_old_graphics();
 
     token_t *token_arr = NULL;
     ret_t ret_val = tokenization::tokenizator(token_arr, argv[1]);
     _RETURN_ON_TRUE(ret_val, ret_val, close_log());
 
-    /*LOG("\n-> tokenization done, token array pointer is %p;\n\n", token_arr);
+    parser_ft parser = {token_arr};
+    node_t *root = parser.pars_expr();
+    
+    root->create_gparh_code("parsing_result.png");
 
-    node_t *root = pars_expr(token_arr);
-    LOG("\n-> expression was parsed, root pointer is %p\n\n", root);
-
-    simpl_expr(&root);
+    /*simpl_expr(&root);
     LOG("\n-> pre-diff calculations were done\n\n");
     _CREATE_GRAPH(root, EXPR);
 
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
     LOG("\n-> programm ended successfully");
     _CLOSE_LOG();*/
 
-    delete [] token_arr;
+    delete root;
     close_log();
 
     return 0;
