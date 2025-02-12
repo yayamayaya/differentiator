@@ -4,8 +4,6 @@
 #include "debugging.hpp"
 #include "tree_func.hpp"
 
-//#include "../../common/tree_func/types.h"
-
 #define GRAPHICS_DIR        "./tree_graphics/"
 #define GRAPH_CODE_LOCATION "tree_graphics/graph_code"
 #define PRINT_CMD           "dot ./tree_graphics/graphcode.txt -Tpng -otree.png"

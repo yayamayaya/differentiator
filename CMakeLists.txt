@@ -2,11 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(differentiator)
 
-#set(CMAKE_CPP_COMPILER ${CPP_COMPILER})
-
 add_definitions(-DGRAPH)
-
-#add_compile_definitions(-DBIN_PATH=\"${CMAKE_CURRENT_BINARY_DIR}\")
 
 add_definitions(
     -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations -Wc++14-compat
@@ -20,16 +16,9 @@ add_definitions(
 -fstrict-overflow -flto-odr-type-merging -fno-omit-frame-pointer -Wlarger-than=8192 -Wstack-usage=8192 -pie -fPIE -Werror=vla
 )
 
-file(GLOB SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*cpp)
-file(GLOB HDRS ${CMAKE_CURRENT_SOURCE_DIR}/include/*hpp)
-
 include_directories(
-    GLOBAL
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ./main_src/include/
 )
 
-add_executable(differentiator ${SRCS} ${HDRS})
-
-#add_subdirectory(server ${CMAKE_CURRENT_BINARY_DIR}/server_interface)
-#add_subdirectory(task_2 ${CMAKE_CURRENT_BINARY_DIR}/task_2)
-
+add_subdirectory(main_src)
+add_subdirectory(modules)

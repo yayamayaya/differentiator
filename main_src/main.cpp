@@ -3,7 +3,7 @@
 #include "tokenizator.hpp"
 //#include "main.h"
 
-void simpl_expr(node_t **root);
+//void simpl_expr(node_t **root);
 
 //TO DO: сделать дифференциатор
 int main(int argc, char const *argv[])
