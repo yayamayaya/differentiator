@@ -63,6 +63,16 @@ static token_t detect_token(const string &buff, unsigned int &pos)
         token.type = SPACE_SYMB;
         return token;
     }
+
+    operation_t op_code = arithm_operations::find_operation(buff.data(), pos);
+    if (op_code)
+    {
+        LOG("> operation '%d' detected \n", op_code);
+
+        token.data.operation = op_code;
+        token.type = OPERATION;
+        return token;
+    }    
     
     int n = 0;
     double number = 0;
@@ -89,16 +99,6 @@ static token_t detect_token(const string &buff, unsigned int &pos)
 
         return token;
     }
-
-    operation_t op_code = arithm_operations::find_operation(buff.data(), pos);
-    if (op_code)
-    {
-        LOG("> operation '%d' detected \n", op_code);
-
-        token.data.operation = op_code;
-        token.type = OPERATION;
-        return token;
-    }    
 
     LOG("> couldn't detect token, syntax error\n");
     token.type = SYNTAX_NOT_DET;
