@@ -13,6 +13,7 @@
         "descr_sending_funcs.h": "c",
         "user_work_func.h": "c",
         "limits": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "string": "cpp"
     }
 }
