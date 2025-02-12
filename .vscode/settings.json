@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "data_base_stack.h": "c",
+        "debugging.h": "c",
+        "connect_pipe.h": "c",
+        "ipc.h": "c",
+        "msg_ipc.h": "c",
+        "structs.h": "c",
+        "ip.h": "c",
+        "request_check_func.h": "c",
+        "msg.h": "c",
+        "sig_handlers.h": "c",
+        "descr_sending_funcs.h": "c",
+        "user_work_func.h": "c",
+        "limits": "cpp",
+        "type_traits": "cpp"
+    }
+}

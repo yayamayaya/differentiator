@@ -1,16 +1,17 @@
 #ifndef GRAPH_CREATE
 #define GRAPH_CREATE
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include "../../common/tree_func/types.h"
-#include "../../common/log/log.h"
+#include "debugging.hpp"
+#include "tree_func.hpp"
 
-#define EXPR_LOC "data/expression_to_diff.txt"
-#define PNG_LOC "dot graph/graphcode.txt -Tpng -otree.png"
+//#include "../../common/tree_func/types.h"
 
-#define GPRAPH_CODE_START   "digraph G\n\
+#define GRAPHICS_DIR        "./tree_graphics/"
+#define GRAPH_CODE_LOCATION "tree_graphics/graph_code"
+#define PRINT_CMD           "dot ./tree_graphics/graphcode.txt -Tpng -otree.png"
+
+#define GPRAPH_CODE_START\
+"digraph G\n\
 {\n\
     graph [dpi = 1000];\n\
     bgcolor = \"#9F8C76\"\n\
@@ -24,13 +25,18 @@
     penwidth = 2, color = \"#1a1718\"\n\
     ]\n\n\
 "
-#define GRAPH_NUMBER_NODE   "\tnode_num%p [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
-                                                                                node, node->data.number, node, node->l, node->r
-#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
-                                                                                node, node->data.operation, node, node->l, node->r
-#define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%c | {VAR | %p} | {%p | %p}}\"];\n", \
-                                                                                node, node->data.variable, node, node->l, node->r
+#define GRAPH_CODE_END "}\n"
 
+#define GRAPH_NUMBER_NODE   "\tnode_num%p [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
+                                                                                node, node->data.number, node, node->l_node, node->r_node
+#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%#04x | {OP | %p} | {%p | %p}}\"];\n", \
+                                                                                node, node->data.operation, node, node->l_node, node->r_node
+#define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%c | {VAR | %p} | {%p | %p}}\"];\n", \
+                                                                                node, node->data.variable, node, node->l_node, node->r_node
+
+
+#define LEFT_NODE           "\tnode_num%p -> node_num%p;\n", node, node->l_node
+#define RIGHT_NODE          "\tnode_num%p -> node_num%p;\n", node, node->r_node
 
 #define DOT_CALL    "dot graph/graphcode.txt -Tpng -o"
 
@@ -57,9 +63,10 @@ enum GRAPH_ERRORS
     NO_ERR = 0,
 };
 
-int create_gparh_code(node_t *node, const int PNG_TYPE);
-void print_png(const int PNG_TYPE);
-void clear_all_png();
+int create_gparh_code(node_t *node);
+
+no_ret_val_t clear_old_graphics();
+
 int go_through_tree(FILE *gcode, node_t *node);
 
 #endif

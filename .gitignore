@@ -14,3 +14,7 @@ graph/graph
 graph/graphcode
 data/expression_to_diff.txt
 bin
+build
+differentiator.log
+old_differ
+.gitignore
