@@ -16,6 +16,14 @@ add_definitions(
 -fstrict-overflow -flto-odr-type-merging -fno-omit-frame-pointer -Wlarger-than=8192 -Wstack-usage=8192 -pie -fPIE -Werror=vla
 )
 
+file (GLOB INCL ./modules/*/include/)
+
+foreach(item ${INCL})
+	if(IS_DIRECTORY ${item})
+		include_directories(${item})
+	endif()
+endforeach()
+
 include_directories(
     ./main_src/include/
 )
