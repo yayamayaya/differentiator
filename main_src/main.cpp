@@ -2,37 +2,36 @@
 #include "debugging.hpp"
 #include "tokenizator.hpp"
 #include "parser.hpp"
+#include "simplificate.hpp"
+#include "argv_parser.hpp"
 
-//void simpl_expr(node_t **root);
-
-//TO DO: сделать дифференциатор
 int main(int argc, char const *argv[])
 {
-    if (argc != 2)
-    {
-        std::cout << "> please, enter the expression as programm parameter\n";
-        return 1;
-    }
+    argv_st args = {argc, argv};
+    if (!args.check_parse_status()) return NOT_ENOUGH_ARGS;
 
     open_log();
     LOG(LONG_LINE);
     LOG("> starting programm...\n");
+#ifndef TESTING
     clear_old_graphics();
+#endif
 
     token_t *token_arr = NULL;
-    ret_t ret_val = tokenization::tokenizator(token_arr, argv[1]);
+    ret_t ret_val = tokenization::tokenizator(token_arr, args.give_expr());
     _RETURN_ON_TRUE(ret_val, ret_val, close_log());
 
     parser_ft parser = {token_arr};
     node_t *root = parser.pars_expr();
+    _RETURN_ON_TRUE(!root, SYNTAX_ERR, close_log());
     
-    root->create_gparh_code("parsing_result.png");
-
-    /*simpl_expr(&root);
-    LOG("\n-> pre-diff calculations were done\n\n");
-    _CREATE_GRAPH(root, EXPR);
-
-    node_t *diff_root = differen(root);
+    simplificator simpl = {root};
+    root = simpl.simplificate(root);
+    _RETURN_ON_TRUE(simpl.check_for_zero_div(), WRONG_EXPR_ERR, close_log());
+    
+    root->create_gparh_code(args.give_graphname());
+    
+    /*node_t *diff_root = differen(root);
     LOG("\n-> expression was differentiated, diff. root pointer is %p\n\n", diff_root);
 
     _CREATE_GRAPH(diff_root, DIFF_EXPR);
@@ -50,15 +49,3 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-
-/*void simpl_expr(node_t **root)
-{
-    int flag = 0;
-    while (!flag)
-    {
-        flag = 1;
-        calculate(*root);
-        //root = simplificate(*root, &flag);
-    }
-    return;
-}*/
