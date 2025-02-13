@@ -95,6 +95,7 @@ public:
     int create_gparh_code(const std::string file_name);
 
     friend class simplificator;
+    friend class calculator;
 };
 
 

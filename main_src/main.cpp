@@ -4,6 +4,7 @@
 #include "parser.hpp"
 #include "simplificate.hpp"
 #include "argv_parser.hpp"
+#include "calculator.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -28,7 +29,11 @@ int main(int argc, char const *argv[])
     simplificator simpl = {root};
     root = simpl.simplificate(root);
     _RETURN_ON_TRUE(simpl.check_for_zero_div(), WRONG_EXPR_ERR, close_log());
-    
+
+    calculator calc = {root};
+    ret_val = calc.run_calculator();
+    _RETURN_ON_TRUE(ret_val, ret_val, close_log());
+
     root->create_gparh_code(args.give_graphname());
     
     /*node_t *diff_root = differen(root);
