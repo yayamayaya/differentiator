@@ -26,6 +26,8 @@ void open_log()
         return;
     }
     
+    closedir(dir);
+
     log_file = fopen(LOG_PATH, "ab");
     if (!log_file) printf("> couldn't open log file for server, resuming work without logs\n");
     
