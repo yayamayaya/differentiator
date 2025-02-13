@@ -21,11 +21,13 @@ enum RET_VAL
 {
     NO_ERR                  = 0,
     END_OF_THE_TREE         = 41,
+    NOT_ENOUGH_ARGS         = 42,
 
     FILE_OPN_ERR            = 71,
     MEM_RLC_ERR             = 72,
     TOKENS_ARR_ALC_ERR      = 73,
     NO_ARGV_STRING_ERR      = 74,
+    WRONG_EXPR_ERR          = 75,
 
     FATAL_ERR               = 404,
 };
