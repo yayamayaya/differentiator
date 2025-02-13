@@ -30,3 +30,4 @@ include_directories(
 
 add_subdirectory(main_src)
 add_subdirectory(modules)
+add_subdirectory(tests)
