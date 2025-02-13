@@ -26,22 +26,6 @@ void open_log()
         return;
     }
     
-    _RETURN_ON_TRUE(chdir(DIR_PATH) == -1,, 
-        LOG_ERR("> chdir error:");
-        closedir(dir));
-    
-    while (1)
-    {
-        struct dirent *dir_info = readdir(dir);
-        if (!dir_info) break;
-        if (dir_info->d_type == DT_REG)
-        unlink(dir_info->d_name);
-    }
-    
-    closedir(dir);
-    
-    chdir("./..");
-
     log_file = fopen(LOG_PATH, "ab");
     if (!log_file) printf("> couldn't open log file for server, resuming work without logs\n");
     
