@@ -28,6 +28,9 @@ enum RET_VAL
     TOKENS_ARR_ALC_ERR      = 73,
     NO_ARGV_STRING_ERR      = 74,
     WRONG_EXPR_ERR          = 75,
+    WRONG_TYPE_ERR          = 76,
+    OP_WASNT_FOUND_ERR      = 77,
+    CALCULATION_ERR         = 78,
 
     FATAL_ERR               = 404,
 };
