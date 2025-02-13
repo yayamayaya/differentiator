@@ -1,8 +1,6 @@
 #include <iostream>
 #include "tests.hpp"
 
-#define TESTING
-
 int main()
 {
     tests testing = {};

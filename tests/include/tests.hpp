@@ -13,9 +13,9 @@
 
 class tests
 {
-    private:
+private:
 
-    static constexpr unsigned int tests_num = 23;
+    static constexpr unsigned int tests_num = 26;
 
     const std::string prog_call     = "./run.sh '";
 
@@ -75,9 +75,14 @@ class tests
         
         "2/1",
     
+        "ln(cos(4-3.5)*51^sqrt(4))+1",
+        
+        "54+x+21+41",
+        
+        "x^sqrt(2^3-2-1*2)"
     };
 
-    public:
+public:
 
     void run_tests();
 
