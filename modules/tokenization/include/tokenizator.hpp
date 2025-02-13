@@ -17,7 +17,7 @@ enum TOKEN_TYPE
 
 namespace tokenization
 {
-    ret_t tokenizator(token_t * &token_arr_ptr, const char *expr_argv);
+    ret_t tokenizator(token_t * &token_arr_ptr, const std::string expression);
 }
 
 

@@ -9,15 +9,11 @@ using std::string;
 
 static token_t detect_token(const string &buff, unsigned int &pos);
 
-ret_t tokenization::tokenizator(token_t *&token_arr, const char *expr_argv)
+ret_t tokenization::tokenizator(token_t *&token_arr, const std::string expression)
 {
-    _RETURN_ON_TRUE(!expr_argv, NO_ARGV_STRING_ERR, LOG("> no argument given\n"));
+    _RETURN_ON_TRUE(!expression.c_str(), NO_ARGV_STRING_ERR, LOG("> no argument given\n"));
 
     LOG("> starting tokenization...\n");
-
-    LOG("> copying expression to a new string\n");
-    const string expression = expr_argv;
-    _RETURN_ON_TRUE(expression.size() == 0, NO_ARGV_STRING_ERR, LOG("> emtpy string error\n"));
     
     LOG("> initialising token array\n");
     tokens_arr tokens = {};
