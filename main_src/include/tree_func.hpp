@@ -48,11 +48,11 @@ public:
     struct node_t *l_node;
     struct node_t *r_node;
     
-    node_t(const number_t &number): data({number}), type(NUMBER), l_node(nullptr), r_node(nullptr) {};
+    node_t(const number_t number): data({number}), type(NUMBER), l_node(nullptr), r_node(nullptr) {};
     
-    node_t(const operation_t &operation, node_t *l, node_t *r): data({operation}), type(OPERATION), l_node(l), r_node(r) {};
+    node_t(const operation_t operation, node_t *l, node_t *r): data({operation}), type(OPERATION), l_node(l), r_node(r) {};
     
-    node_t(const var_t &variable): data ({variable}), type(VARIABLE), l_node(nullptr), r_node(nullptr) {};
+    node_t(const var_t variable): data ({variable}), type(VARIABLE), l_node(nullptr), r_node(nullptr) {};
     
     node_t(const node_t &copy): data(copy.data), type(copy.type), l_node(copy.l_node), r_node(copy.r_node) {};
 
@@ -96,6 +96,7 @@ public:
 
     friend class simplificator;
     friend class calculator;
+    friend class differentiation_module;
 };
 
 
