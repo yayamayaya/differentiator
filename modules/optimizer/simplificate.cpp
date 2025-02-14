@@ -3,6 +3,11 @@
 #include <iostream>
 #include <cmath>
 
+node_t *simplificator::simplificate()
+{
+    return simplificate(root);
+}
+
 node_t *simplificator::simplificate(node_t *self)
 {
     if (self == NULL) return NULL;

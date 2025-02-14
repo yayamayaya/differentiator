@@ -12,6 +12,8 @@ private:
 
     bool zero_div;
 
+    node_t *simplificate(node_t *self);
+
     node_t *zero_opt(node_t *self);
 
     node_t *case_zero_on_zero(node_t *self);
@@ -43,7 +45,7 @@ public:
         return *this;
     }
 
-    node_t *simplificate(node_t *self);
+    node_t *simplificate();
 
     bool check_for_zero_div() {return zero_div;}
 };
