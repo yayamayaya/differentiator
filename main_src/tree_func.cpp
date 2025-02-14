@@ -6,17 +6,22 @@
 
 node_t *node_t::replace_node(const node_t *copy)
 {
-    node_t *repl_node = new node_t(copy);
+    node_t *new_r_node = nullptr;
+    node_t *new_l_node = nullptr;
 
+    if (copy->l_node)
+        new_l_node = new node_t(copy->l_node);
+    if (copy->r_node)
+        new_r_node = new node_t(copy->r_node);
+        
+    data    = copy->data;
+    type    = copy->type;
+    
     delete l_node;
     delete r_node;
 
-    data    = repl_node->data;
-    type    = repl_node->type;
-    l_node  = repl_node->l_node;
-    r_node  = repl_node->r_node;
-
-    delete repl_node;
+    l_node  = new_l_node;
+    r_node  = new_r_node;
 
     return this;
 }
