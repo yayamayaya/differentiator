@@ -15,4 +15,5 @@ target_link_libraries(
     parser 
     optimizer
     calculator
+    diff_module
     )
