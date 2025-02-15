@@ -1,4 +1,4 @@
-#include "differentiator.hpp"
+#include "differentiation_module.hpp"
 #include "differentiator_DSL.hpp"
 #include "tree_func.hpp"
 #include "operations.hpp"
@@ -9,8 +9,8 @@ ret_t differentiation_module::run()
     LOG("> starting differentiation\n");
 
     diffed_root = find_differential(root);
-    if (error_status) 
-        delete root;
+
+    LOG("> differentiation finished\n");
 
     return error_status;
 }
