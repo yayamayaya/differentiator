@@ -26,8 +26,8 @@
 
 #define GRAPH_NUMBER_NODE   "\tnode_num%p [shape = \"record\", color=\"#478056\", label = \"{%.2lf | {NUM | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.number, node, node->l_node, node->r_node
-#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%d | {OP | %p} | {%p | %p}}\"];\n", \
-                                                                                node, node->data.operation, node, node->l_node, node->r_node
+#define GRAPH_OP_NODE       "\tnode_num%p [shape = \"record\", color=\"#632b2b\", label = \"{%#x | {OP | %p} | {%p | %p}}\"];\n", \
+                                                                                node, (unsigned int)node->data.operation, node, node->l_node, node->r_node
 #define GRAPH_VAR_NODE      "\tnode_num%p [shape = \"record\", color=\"#70578a\", label = \"{%d | {VAR | %p} | {%p | %p}}\"];\n", \
                                                                                 node, node->data.variable, node, node->l_node, node->r_node
 

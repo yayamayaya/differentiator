@@ -100,6 +100,12 @@ public:
 
     no_ret_val_t print_unary_op(FILE *file);
 
+    no_ret_val_t print_expr_in_brack_if_needed(FILE *file, operation_t parent_op);
+
+    no_ret_val_t check_for_negative_power();
+
+    ret_t check_for_sqrt(FILE *file);
+
     friend class simplificator;
     friend class calculator;
     friend class differentiation_module;

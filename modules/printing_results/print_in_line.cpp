@@ -1,5 +1,6 @@
 #include "tree_func.hpp"
 #include "in_line_DSL.hpp"
+#include <cmath>
 #include <assert.h>
 #include <iostream>
 
@@ -30,7 +31,12 @@ no_ret_val_t node_t::print_binary_op(FILE *file)
     assert(l_node);
     assert(type == OPERATION);
 
-    _CHECK_FOR_BRACKETS_THEN_PRINT(l_node);
+    check_for_negative_power();
+
+    if (check_for_sqrt(file))
+        return;
+
+    l_node->print_expr_in_brack_if_needed(file, data.operation);
     
     unsigned int op = data.operation;
     switch (op)
@@ -45,7 +51,57 @@ no_ret_val_t node_t::print_binary_op(FILE *file)
         break;
     }
 
-    _CHECK_FOR_BRACKETS_THEN_PRINT(r_node);
+    r_node->print_expr_in_brack_if_needed(file, data.operation);
+}
+
+ret_t node_t::check_for_sqrt(FILE *file)
+{
+    if (data.operation != POW || r_node->type != NUMBER || fabs(r_node->data.number - 0.5) >= 1.0e-5)
+        return 0;
+
+    delete r_node;
+
+    data    = SQRT;
+    type    = OPERATION;
+    r_node  = nullptr;
+
+    print_in_line(file);
+
+    return 1;
+}
+
+no_ret_val_t node_t::check_for_negative_power()
+{
+    if (data.operation != POW || r_node->type != NUMBER || r_node->data.number >= 0)
+        return;
+
+    r_node->replace_node(0 - r_node->data.number);
+
+    node_t *this_copy = new node_t{this};
+
+    delete l_node;
+    delete r_node;
+
+    data    = DIV;
+    type    = OPERATION;
+    l_node  = new node_t{1.0};
+    r_node  = this_copy;
+}
+
+no_ret_val_t node_t::print_expr_in_brack_if_needed(FILE *file, operation_t parent_op)
+{
+    if ((type != OPERATION) || ((data.operation & parent_op) & 0xF0) || (data.operation & FUNC_OP))
+    {
+        print_in_line(file);
+
+        return;
+    }
+    
+    _OP_BRACK();
+    
+    print_in_line(file);
+
+    _CL_BRACK();
 }
 
 no_ret_val_t node_t::print_unary_op(FILE *file)
@@ -83,7 +139,3 @@ no_ret_val_t node_t::print_unary_op(FILE *file)
     _CL_BRACK();
 }
 
-no_ret_val_t print_expr_in_brack_if_needed()
-{
-    
-}
