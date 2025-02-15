@@ -1,5 +1,6 @@
 #include <iostream>
 #include "tests.hpp"
+#include "differentiator.hpp"
 
 int main()
 {
@@ -13,19 +14,17 @@ void tests::run_tests()
 {
     int ret_val = 0;
 
+    differentiator differ = {};
+
     for (unsigned int i = 0; i < tests_num; i++)
     {
-        ret_val = run_single_test(i);
+        ret_val = differ.differentiate(tests[i]);
+        
+        if (!ret_val)
+            differ.print_results(stdout);
+
         std::cout << "> test number " << i << " had return status of: \"" << ret_val << "\"\n";
     }
 
     return;
-}
-
-int tests::run_single_test(const unsigned int test_number)
-{
-    const std::string num = std::to_string(test_number);
-    const std::string call_expr = prog_call + tests[test_number] + graph_name + num + graph_format + tex_name + num + tex_format;
-
-    return system(call_expr.c_str());
 }
