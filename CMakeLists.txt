@@ -25,9 +25,13 @@ foreach(item ${INCL})
 endforeach()
 
 include_directories(
-    ./main_src/include/
+    ./main_module/include/
 )
 
-add_subdirectory(main_src)
+add_subdirectory(main_module)
 add_subdirectory(modules)
 add_subdirectory(tests)
+
+add_executable(differentiator main.cpp)
+
+target_link_libraries(differentiator differ)
