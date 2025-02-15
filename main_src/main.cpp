@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 
     differentiator differ = {};
 
-    // differ.turn_on_picture_printing("pic.png");
+    differ.turn_on_picture_printing("pic.png");
 
     differ.differentiate(argv[1]);
 
