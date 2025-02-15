@@ -26,24 +26,25 @@ private:
 
     static constexpr double epsilon = 1.0e-05;
 
-public:
-    simplificator(node_t *root_node): root(root_node), simplif_continue_status(true), zero_div(false) {};
-
     simplificator(const simplificator& simpl): root(nullptr), simplif_continue_status(false), zero_div(true) 
     {
         (void)simpl;
         LOG("> wrong usage of simplificator class\n");
     }
-
-    ~simplificator() {};
-
+    
     simplificator &operator=(const simplificator& simpl) 
     {
         (void)simpl;
         LOG("> wrong usage of simplificator class\n");
-
+    
         return *this;
     }
+
+public:
+
+    simplificator(node_t *root_node = nullptr): root(root_node), simplif_continue_status(true), zero_div(false) {};
+
+    ~simplificator() {};
 
     node_t *simplificate();
 

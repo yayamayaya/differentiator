@@ -19,7 +19,7 @@ node_t *simplificator::simplificate(node_t *self)
         self = one_opt(self);
 
     _RETURN_ON_TRUE(!self,    NULL);
-    _RETURN_ON_TRUE(zero_div, NULL, delete self);
+    _RETURN_ON_TRUE(zero_div, NULL);
 
     LOG("> calling recursive simplification\n");
 
