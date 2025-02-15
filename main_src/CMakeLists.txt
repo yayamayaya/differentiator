@@ -16,4 +16,5 @@ target_link_libraries(
     optimizer
     calculator
     diff_module
+    output
     )
