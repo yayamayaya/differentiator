@@ -6,9 +6,7 @@
 #include <string>
 
 using number_t    = double;
-//using operation_t = unsigned char;
 using var_t       = char;
-//using node_type   = unsigned char;
 
 enum data_types_t
 {
@@ -23,11 +21,11 @@ union data_t
 {
     data_t() {}
 
-    data_t(number_t num):   number(num)   {}
+    data_t(number_t num):        number(num)   {}
     
     data_t(enum operation_t op): operation(op) {}
     
-    data_t(var_t var):      variable(var) {}
+    data_t(var_t var):           variable(var) {}
     
     ~data_t() {}
 
@@ -62,9 +60,11 @@ public:
             l_node = new node_t(copy->l_node);
         if (copy->r_node)
             r_node = new node_t(copy->r_node);
-
+        
         return;
     }
+        
+    no_ret_val_t print_in_line(FILE *file);
     
     node_t(const data_t &c_data, data_types_t c_type): data(c_data), type(c_type), l_node(nullptr), r_node(nullptr) {};
 
@@ -90,14 +90,20 @@ public:
 
     node_t *replace_node(const node_t *copy);
 
-    node_t *replace_node(const number_t &num);
+    node_t *replace_node(const number_t num);
+
+    no_ret_val_t put_x_value (const number_t num);
 
     int create_gparh_code(const std::string file_name);
+
+    no_ret_val_t print_binary_op(FILE *file);
+
+    no_ret_val_t print_unary_op(FILE *file);
 
     friend class simplificator;
     friend class calculator;
     friend class differentiation_module;
+    friend class differentiator;
 };
-
 
 #endif
