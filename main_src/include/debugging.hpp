@@ -31,6 +31,9 @@ enum RET_VAL
     WRONG_TYPE_ERR          = 76,
     OP_WASNT_FOUND_ERR      = 77,
     CALCULATION_ERR         = 78,
+    NO_ARG_FOR_OPTION       = 79,
+    EMPTY_EXPRESSION_ERR    = 80,
+    NO_EXPRESSION_NODE_ERR  = 81,
 
     FATAL_ERR               = 404,
 };
