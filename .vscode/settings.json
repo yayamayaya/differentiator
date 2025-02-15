@@ -63,6 +63,7 @@
         "text_encoding": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "print": "cpp"
+        "print": "cpp",
+        "ratio": "cpp"
     }
 }
