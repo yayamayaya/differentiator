@@ -97,6 +97,7 @@ no_ret_val_t differentiator::print_results(FILE *file)
 {
     assert(file);
 
+    fprintf(file, "> ");
     curr_root->print_in_line(file);
     fprintf(file, "\n");
 
