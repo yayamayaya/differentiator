@@ -14,7 +14,6 @@ no_ret_val_t go_through_tree(FILE *code_file, node_t *node);
 
 int node_t::create_gparh_code(const std::string file_name)
 {
-#ifdef GRAPH
     FILE *code_file = std::fopen("tree_graphics/graphcode.txt", "wb");
     _RETURN_ON_TRUE(!code_file, FILE_OPN_ERR, LOG_ERR("> couldn't open graph code file:"));
 
@@ -29,7 +28,6 @@ int node_t::create_gparh_code(const std::string file_name)
     fclose(code_file);
 
     print_png(file_name);
-#endif
     return NO_ERR;
 }
 
@@ -72,7 +70,6 @@ no_ret_val_t print_png(const std::string file_name)
 
 no_ret_val_t clear_old_graphics()
 {
-#ifdef GRAPH
     DIR *dir = opendir(GRAPHICS_DIR); 
     if (!dir)
     {
@@ -99,6 +96,5 @@ no_ret_val_t clear_old_graphics()
     closedir(dir);
     
     chdir("./..");
-#endif
     return;
 }
