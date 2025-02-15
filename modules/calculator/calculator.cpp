@@ -6,11 +6,17 @@ int calculator::run_calculator()
 {
     assert(root);
 
+    simplificator simpl = {root};
+    root = simpl.simplificate();
+    _RETURN_ON_TRUE(simpl.check_for_zero_div(), WRONG_EXPR_ERR, close_log());
+
     _RETURN_ON_TRUE(root->type != OPERATION, 0, LOG("> nothing to calculate\n"));
     root = calculate_tree(root);
     _RETURN_ON_TRUE(calc_status, calc_status, 
-        LOG("> some error while runnning a calculator\n");
-        delete root);
+        LOG("> some error while runnning a calculator\n"));
+
+    root = simpl.simplificate();
+    _RETURN_ON_TRUE(simpl.check_for_zero_div(), WRONG_EXPR_ERR, close_log());
 
     return 0;
 }
@@ -75,7 +81,6 @@ node_t *calculator::binary_operation(node_t *node)
 
             return node;
     }
-
 
     _RETURN_ON_TRUE(std::isnan(result), node, calc_status = CALCULATION_ERR);
     return node->replace_node(result);

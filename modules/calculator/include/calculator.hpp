@@ -2,13 +2,14 @@
 #define EXPR_CALC
 
 #include "tree_func.hpp"
+#include "simplificate.hpp"
 
 class calculator
 {
 private:
     node_t *root;
 
-    ret_t calc_status;
+    static inline ret_t calc_status = 0;
 
     node_t *calculate_tree(node_t *node);
 
@@ -18,26 +19,26 @@ private:
 
     node_t *binary_operation(node_t *node);
 
-public:
-    calculator(node_t *tree_root): root(tree_root), calc_status(0) {}
-
-    calculator(const calculator &copy): root(NULL), calc_status(1) 
+    calculator(const calculator &copy): root(NULL) 
     {
         (void)copy;
         LOG("> wrong usage of calculator class\n");
 
         return;
     }
-
-    ~calculator() {};
-
+    
     calculator &operator=(const calculator &copy)
     {
         (void)copy;
         LOG("> wrong usage of calculator class\n");
-
+    
         return *this;
     }
+
+public:
+    calculator(node_t *tree_root = nullptr): root(tree_root) {}
+
+    ~calculator() {};
 
     ret_t run_calculator();
 };
